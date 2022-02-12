@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 09:43:34 by pmoreno-          #+#    #+#             */
-/*   Updated: 2021/09/29 09:44:14 by pmoreno-         ###   ########.fr       */
+/*   Created: 2021/09/29 09:51:52 by pmoreno-          #+#    #+#             */
+/*   Updated: 2021/09/29 09:52:22 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_stack **lst, t_stack *new)
+t_stack	*ft_lstlast(t_stack *lst)
 {
-	if (new == NULL)
-		return ;
-	if (*lst == NULL)
+	int		i;
+	t_stack	*ant;
+	t_stack	*sig;
+
+	if (lst == 0)
+		return (0);
+	i = 0;
+	ant = lst;
+	if (ft_lstsize(lst) > 1)
 	{
-		*lst = new;
+		sig = lst->next;
+		while (sig != NULL)
+		{
+			ant = sig;
+			sig = sig->next;
+		}
 	}
-	else
-		ft_lstlast(*lst)->next = new;
+	return (ant);
 }
