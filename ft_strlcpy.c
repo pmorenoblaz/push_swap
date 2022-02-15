@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 09:12:42 by pmoreno-          #+#    #+#             */
-/*   Updated: 2021/09/23 14:19:46 by pmoreno-         ###   ########.fr       */
+/*   Created: 2021/09/15 11:01:09 by pmoreno-          #+#    #+#             */
+/*   Updated: 2021/09/23 14:05:15 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int			i;
-	int			e;
-	int long	n;
+	size_t	i;
 
+	if (dstsize == 0)
+		return (ft_strlen(src));
 	i = 0;
-	e = 1;
-	n = 0;
-	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (i < (dstsize - 1) && i < ft_strlen(src))
 	{
-		if (str[i] == '-')
-			e *= (-1);
+		dst[i] = src[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = (n * 10) + (str[i] - 48);
-		i++;
-	}
-	return (n * e);
+	dst[i] = 0;
+	return (ft_strlen(src));
 }

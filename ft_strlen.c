@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 09:12:42 by pmoreno-          #+#    #+#             */
-/*   Updated: 2021/09/23 14:19:46 by pmoreno-         ###   ########.fr       */
+/*   Created: 2021/09/14 11:29:56 by pmoreno-          #+#    #+#             */
+/*   Updated: 2021/09/14 11:29:58 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+
+size_t	ft_strlen(const char *s)
 {
-	int			i;
-	int			e;
-	int long	n;
+	size_t	i;
 
 	i = 0;
-	e = 1;
-	n = 0;
-	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
+	while (s[i] != 0)
 		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			e *= (-1);
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = (n * 10) + (str[i] - 48);
-		i++;
-	}
-	return (n * e);
+	return (i);
 }

@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/17 09:12:42 by pmoreno-          #+#    #+#             */
-/*   Updated: 2021/09/23 14:19:46 by pmoreno-         ###   ########.fr       */
+/*   Created: 2021/09/14 11:37:40 by pmoreno-          #+#    #+#             */
+/*   Updated: 2021/09/14 11:37:42 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
-	int			i;
-	int			e;
-	int long	n;
+	int		i;
 
 	i = 0;
-	e = 1;
-	n = 0;
-	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (s[i] != 0)
 	{
-		if (str[i] == '-')
-			e *= (-1);
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = (n * 10) + (str[i] - 48);
-		i++;
-	}
-	return (n * e);
+	if (s[i] == c)
+		return ((char *)&s[i]);
+	return (0);
 }

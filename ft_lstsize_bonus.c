@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_stack *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		i;
-	t_stack	*s;
+	t_list	*s;
 
 	if (lst == NULL)
 		return (0);
