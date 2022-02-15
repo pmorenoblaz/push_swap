@@ -79,6 +79,11 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		if (ft_repeated_nbr(a) == 0)
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
 		printf("%d -> orden\n", ft_lst_is_ordered(a));
 		printf("%d -> repetido\n", ft_repeated_nbr(a));
 		ft_lstprint(a);
