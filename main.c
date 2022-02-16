@@ -11,7 +11,8 @@ int	ft_valid_args(char	*arg, t_list **a)
 	while (list[i])
 	{
 		j = 0;
-		if ((list[i][j] == '-' || list[i][j] == '+') && (ft_strlen(list[i]) > 1))
+		if ((list[i][j] == '-' || list[i][j] == '+')
+			&& (ft_strlen(list[i]) > 1))
 				j++;
 		while (list[i][j])
 		{
@@ -39,30 +40,33 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a)
 	return (1);
 }
 
-void	ft_lstprint(t_list *column_a)
+void	ft_lstprint(t_list *list_a)
 {
 	t_list	*aux;
-	// list	*aux2;
-	aux = column_a;
-	// aux2 = column_b;
-	while (aux /*|| aux2*/)
+
+	aux = list_a;
+	while (aux)
 	{
-		if (aux /*&& aux2*/)
+		if (aux)
 		{
 			printf("%ld \n", aux->num);
 			aux = aux->next;
-			// aux2 = aux2->next;
 		}
-		// else if (aux && !aux2)
-		// {
-		// 	ft_printf("%d            .\n", aux->num);
-		// 	aux = aux->next;
-		// }
-		// else if (!aux && aux2)
-		// {
-		// 	ft_printf(".            %d\n", aux2->num);
-		// 	aux2 = aux2->next;
-		// }
+	}
+	printf("----------- -----------\na           b\n");
+}
+
+void	ft_lstprint2(t_list *list_a, t_list *list_b)
+{
+	t_list	*aux;
+	t_list	*aux2;
+
+	aux = list_a;
+	aux = list_b;
+	while (aux)
+	{
+			printf("%ld                %ld\n", aux->num, aux2->num);
+			aux = aux->next;
 	}
 	printf("----------- -----------\na           b\n");
 }
@@ -87,6 +91,18 @@ int	main(int argc, char **argv)
 		printf("%d -> orden\n", ft_lst_is_ordered(a));
 		printf("%d -> repetido\n", ft_repeated_nbr(a));
 		ft_lstprint(a);
+		printf("\n\n...........SWAP............\n\n");
+		ft_sa(&a);
+		ft_lstprint(a);
+		printf("\n\n...........PUSH...........\n\n");
+	
+		ft_add_to_stack(argv, argc, &b);
+		ft_lstprint(b);
+		ft_pa(&a, &b);
+
+		ft_lstprint(a);
+		// ft_lstprint(a);
+		// ft_lstprint2(a, b);
 	}
 	else
 		write(2, "Error\n", 6);
