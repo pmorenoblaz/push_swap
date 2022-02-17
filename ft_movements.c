@@ -28,12 +28,33 @@ void	ft_pa(t_list **a, t_list **b)
 	t_list	*act;
 	t_list	*sig;
 
-	act = b[0];
 	if (!b)
 		return ;
-	printf("\nLISTA B ANTES:\n");
-	ft_lstprint(*b);
-	ft_lstadd_front(a, act);
-	printf("\nLISTA B DESPUÉS:\n");
-	ft_lstprint(*b);
+	act = b[0];
+	if (act->next)
+	{
+		sig = act->next;
+		ft_lstadd_front(a, act);
+		b[0] = sig;
+	}
+	// 	printf("\nLISTA B ANTES:\n");
+	// ft_lstprint(*b);
+	// printf("\nLISTA B DESPUÉS:\n");
+	// ft_lstprint(*b);
+}
+
+void	ft_ra(t_list **a)
+{
+	t_list	*act;
+
+	if (!a)
+		return ;
+	act = a[0];
+	a[0] = a[0]->next;
+	ft_lstadd_back(a, ft_lstnew(act->num));
+}
+
+void	ft_rr(t_list **a, t_list **b)
+{
+	
 }

@@ -95,14 +95,14 @@ int	main(int argc, char **argv)
 		ft_sa(&a);
 		ft_lstprint(a);
 		printf("\n\n...........PUSH...........\n\n");
-	
 		ft_add_to_stack(argv, argc, &b);
-		ft_lstprint(b);
 		ft_pa(&a, &b);
-
 		ft_lstprint(a);
-		// ft_lstprint(a);
-		// ft_lstprint2(a, b);
+		printf("\n\n...........ROTATE...........\n\n");
+		// ft_add_to_stack(argv, argc, &b);
+		ft_ra(&a);
+		ft_lstprint(a);
+		
 	}
 	else
 		write(2, "Error\n", 6);
