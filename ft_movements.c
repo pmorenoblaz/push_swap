@@ -56,5 +56,6 @@ void	ft_ra(t_list **a)
 
 void	ft_rr(t_list **a, t_list **b)
 {
-	
+	ft_ra(a);
+	ft_ra(b);
 }

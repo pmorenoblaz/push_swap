@@ -9,7 +9,6 @@
 # include <sys/errno.h>
 # include <errno.h>
 
-
 //gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c ft_lstsize_bonus.c ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c
 
 typedef struct s_list
@@ -47,5 +46,6 @@ char	*ft_strchr(const char *s, int c);
 void	ft_sa(t_list **l);
 void	ft_ss(t_list **a, t_list **b);
 void	ft_pa(t_list **a, t_list **b);
+void	ft_ra(t_list **a);
 
 #endif
