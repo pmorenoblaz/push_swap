@@ -13,7 +13,7 @@
 
 typedef struct s_list
 {
-	char			*cnum;
+	int				list;
 	int long		num;
 	struct s_list	*next;
 }	t_list;
@@ -38,6 +38,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstnew(int num);
+void	ft_lstdelone(t_list *lst);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 
@@ -47,5 +48,7 @@ void	ft_sa(t_list **l);
 void	ft_ss(t_list **a, t_list **b);
 void	ft_pa(t_list **a, t_list **b);
 void	ft_ra(t_list **a);
+void	ft_rra(t_list **a);
+void	ft_rrr(t_list **a, t_list **b);
 
 #endif

@@ -91,18 +91,20 @@ int	main(int argc, char **argv)
 		printf("%d -> orden\n", ft_lst_is_ordered(a));
 		printf("%d -> repetido\n", ft_repeated_nbr(a));
 		ft_lstprint(a);
-		printf("\n\n...........SWAP............\n\n");
-		ft_sa(&a);
-		ft_lstprint(a);
-		printf("\n\n...........PUSH...........\n\n");
-		ft_add_to_stack(argv, argc, &b);
-		ft_pa(&a, &b);
-		ft_lstprint(a);
-		printf("\n\n...........ROTATE...........\n\n");
+		// printf("\n\n...........SWAP............\n\n");
+		// ft_sa(&a);
+		// ft_lstprint(a);
+		// printf("\n\n...........PUSH...........\n\n");
 		// ft_add_to_stack(argv, argc, &b);
-		ft_ra(&a);
+		// ft_pa(&a, &b);
+		// ft_lstprint(a);
+		// printf("\n\n...........ROTATE...........\n\n");
+		// // ft_add_to_stack(argv, argc, &b);
+		// ft_ra(&a);
+		// ft_lstprint(a);
+		printf("\n\n...........SWAP............\n\n");
+		ft_rra(&a);
 		ft_lstprint(a);
-		
 	}
 	else
 		write(2, "Error\n", 6);
