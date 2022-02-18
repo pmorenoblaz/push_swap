@@ -43,11 +43,13 @@ char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 
 //Movements
-//ft_movements.c
+//ft_operations.c
 void	ft_sa(t_list **l);
 void	ft_ss(t_list **a, t_list **b);
 void	ft_pa(t_list **a, t_list **b);
 void	ft_ra(t_list **a);
+
+//ft_operations2.c
 void	ft_rra(t_list **a);
 void	ft_rrr(t_list **a, t_list **b);
 
