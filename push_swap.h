@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/02/18 17:54:31 by pmoreno-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -8,9 +20,9 @@
 # include <fcntl.h>
 # include <sys/errno.h>
 # include <errno.h>
-
-//gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c ft_lstsize_bonus.c ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c
-
+/*gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c
+ft_lstsize_bonus.c ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c 
+ft_utils.c ft_lstdelone_bonus.c ft_operations2.c*/
 typedef struct s_list
 {
 	int				list;
@@ -52,5 +64,11 @@ void	ft_ra(t_list **a);
 //ft_operations2.c
 void	ft_rra(t_list **a);
 void	ft_rrr(t_list **a, t_list **b);
+
+//ft_utils.c
+int		ft_putchr(char c);
+void	ft_putstr(char *s);
+void	ft_print_list(t_list **l);
+void	ft_lstprint(t_list *list_a);
 
 #endif

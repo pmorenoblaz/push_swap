@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/02/18 17:54:05 by pmoreno-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_valid_args(char	*arg, t_list **a)
@@ -40,37 +52,6 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a)
 	return (1);
 }
 
-void	ft_lstprint(t_list *list_a)
-{
-	t_list	*aux;
-
-	aux = list_a;
-	while (aux)
-	{
-		if (aux)
-		{
-			printf("%ld \n", aux->num);
-			aux = aux->next;
-		}
-	}
-	printf("----------- -----------\na           b\n");
-}
-
-void	ft_lstprint2(t_list *list_a, t_list *list_b)
-{
-	t_list	*aux;
-	t_list	*aux2;
-
-	aux = list_a;
-	aux = list_b;
-	while (aux)
-	{
-			printf("%ld                %ld\n", aux->num, aux2->num);
-			aux = aux->next;
-	}
-	printf("----------- -----------\na           b\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_list		*a;
@@ -83,27 +64,12 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		a->list = 0;
 		if (ft_repeated_nbr(a) == 0)
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		printf("%d -> orden\n", ft_lst_is_ordered(a));
-		printf("%d -> repetido\n", ft_repeated_nbr(a));
-		ft_lstprint(a);
-		// printf("\n\n...........SWAP............\n\n");
-		// ft_sa(&a);
-		// ft_lstprint(a);
-		// printf("\n\n...........PUSH...........\n\n");
-		// ft_add_to_stack(argv, argc, &b);
-		// ft_pa(&a, &b);
-		// ft_lstprint(a);
-		// printf("\n\n...........ROTATE...........\n\n");
-		// // ft_add_to_stack(argv, argc, &b);
-		// ft_ra(&a);
-		// ft_lstprint(a);
-		printf("\n\n...........SWAP............\n\n");
-		ft_rra(&a);
 		ft_lstprint(a);
 	}
 	else
