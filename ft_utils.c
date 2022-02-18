@@ -26,14 +26,6 @@ void	ft_putstr(char *s)
 		i += ft_putchr(s[i]);
 }
 
-void	ft_print_list(t_list **l)
-{
-	if (l[0]->list == 0)
-		ft_putstr("a\n");
-	else if (l[0]->list == 1)
-		ft_putstr("b\n");
-}
-
 void	ft_lstprint(t_list *list_a)
 {
 	t_list	*aux;
