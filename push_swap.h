@@ -6,7 +6,7 @@
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/02/18 17:54:31 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/02/19 10:44:08 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,12 @@
 # include <fcntl.h>
 # include <sys/errno.h>
 # include <errno.h>
-/*gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c
+/* gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c
 ft_lstsize_bonus.c ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c 
-ft_utils.c ft_lstdelone_bonus.c ft_operations2.c*/
+ft_utils.c ft_lstdelone_bonus.c ft_operations2.c ft_positions.c */
 typedef struct s_list
 {
+	int				pos;
 	int				list;
 	int long		num;
 	struct s_list	*next;
@@ -70,5 +71,11 @@ int		ft_putchr(char c);
 void	ft_putstr(char *s);
 void	ft_print_list(t_list **l);
 void	ft_lstprint(t_list *list_a);
+
+//ft_positions.c
+void	ft_set_default_position(t_list **a);
+void	ft_next_min(t_list **a, int pos);
+void	ft_setposition(t_list **a);
+t_list	*ft_get_max(t_list *a);
 
 #endif

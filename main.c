@@ -64,6 +64,8 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		ft_set_default_position(&a);
+		ft_setposition(&a);
 		a->list = 0;
 		if (ft_repeated_nbr(a) == 0)
 		{

@@ -35,7 +35,7 @@ void	ft_lstprint(t_list *list_a)
 	{
 		if (aux)
 		{
-			printf("%ld \n", aux->num);
+			printf("%ld ---> %d \n", aux->num, aux->pos);
 			aux = aux->next;
 		}
 	}
