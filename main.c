@@ -74,8 +74,9 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		if (argc > 2)
+		if (argc <= 4)
 			ft_order_stack_3(&a);
+		// if (argc )
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
 	}
