@@ -71,8 +71,9 @@ void	ft_setposition(t_list **a)
 	l = ft_lstsize(*a);
 	if (!a)
 		return ;
-	while (i <= l)
+	while (i < l)
 	{
+		printf("%d\n", i);
 		ft_next_min(a, i);
 		i++;
 	}
