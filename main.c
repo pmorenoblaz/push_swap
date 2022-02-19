@@ -68,12 +68,14 @@ int	main(int argc, char **argv)
 		ft_setposition(&a);
 		printf("\n\n...........STACK INICIAL............\n\n");
 		ft_lstprint(a);
+
 		if (ft_repeated_nbr(a) == 0)
 		{
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		ft_order_stack_3(&a);
+		if (argc > 2)
+			ft_order_stack_3(&a);
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
 	}
