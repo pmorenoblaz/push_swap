@@ -77,6 +77,7 @@ int	main(int argc, char **argv)
 		}
 		ft_set_default_position(&a);
 		ft_setposition(&a);
+		ft_lstprint(a);
 		a->list = 0;
 		if (ft_repeated_nbr(a) == 0)
 		{

@@ -69,6 +69,9 @@ void	ft_ra(t_list **a)
 	act = a[0];
 	a[0] = a[0]->next;
 	ft_lstadd_back(a, ft_lstnew(act->num));
+	ft_set_default_position(a);
+	ft_lstprint(*a);
+	ft_setposition(a);
 	if ((*a)->list == 0)
 		ft_putstr("ra\n");
 	else
