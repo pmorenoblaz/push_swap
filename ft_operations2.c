@@ -29,7 +29,7 @@ void	ft_rra(t_list **a)
 	ft_lstadd_front(a, ft_lstnew(act->num));
 	ant->next = 0;
 	ft_lstdelone(act);
-	if (a->list == 0)
+	if (ant->list == 0)
 		ft_putstr("rra\n");
 	else
 		ft_putstr("rrb\n");
