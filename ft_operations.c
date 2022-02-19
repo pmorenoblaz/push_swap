@@ -27,7 +27,7 @@ void	ft_sa(t_list **l)
 		act->next = sig->next;
 		ft_lstadd_front(l, sig);
 	}
-	if (l->list == 0)
+	if ((*l)->list == 0)
 		ft_putstr("pa\n");
 	else
 		ft_putstr("pb\n");
@@ -54,7 +54,7 @@ void	ft_pa(t_list **a, t_list **b)
 		ft_lstadd_front(a, act);
 		b[0] = sig;
 	}
-	if (a->list == 0)
+	if ((*a)->list == 0)
 		ft_putstr("pa\n");
 	else
 		ft_putstr("pb\n");
@@ -69,7 +69,7 @@ void	ft_ra(t_list **a)
 	act = a[0];
 	a[0] = a[0]->next;
 	ft_lstadd_back(a, ft_lstnew(act->num));
-	if (a->list == 0)
+	if ((*a)->list == 0)
 		ft_putstr("ra\n");
 	else
 		ft_putstr("rb\n");

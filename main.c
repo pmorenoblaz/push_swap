@@ -52,6 +52,17 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a)
 	return (1);
 }
 
+void	ft_order_stack(t_list **a)
+{
+	int	min;
+	int max;
+
+	min = ft_get_min(*a)->num;
+	max = ft_get_max(*a)->num;
+	if ((*a)->num == max && (*a)->next->num == min)
+		ft_ra(a);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list		*a;
@@ -72,6 +83,7 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
+		ft_order_stack(&a);
 		ft_lstprint(a);
 	}
 	else

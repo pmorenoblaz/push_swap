@@ -31,11 +31,6 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-//main.c
-int		ft_add_to_stack(char **argv, int argc, t_list **a);
-int		ft_valid_args(char	*arg, t_list **a);
-void	ft_lstprint(t_list *list_a);
-
 //list.c
 int		ft_repeated_nbr(t_list *lst);
 int		ft_lst_is_ordered(t_list *lst);
@@ -77,5 +72,12 @@ void	ft_set_default_position(t_list **a);
 void	ft_next_min(t_list **a, int pos);
 void	ft_setposition(t_list **a);
 t_list	*ft_get_max(t_list *a);
+t_list	*ft_get_min(t_list *a);
+
+//main.c
+int		ft_add_to_stack(char **argv, int argc, t_list **a);
+int		ft_valid_args(char	*arg, t_list **a);
+void	ft_lstprint(t_list *list_a);
+void	ft_order_stack(t_list **a);
 
 #endif

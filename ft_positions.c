@@ -44,6 +44,24 @@ t_list	*ft_get_max(t_list *a)
 	return (max);
 }
 
+t_list	*ft_get_min(t_list *a)
+{
+	t_list	*sig;
+	t_list	*min;
+
+	sig = a;
+	min = sig;
+	if (!a)
+		return (0);
+	while (sig->next)
+	{
+		if (sig->num < min->num)
+			min = sig;
+		sig = sig->next;
+	}
+	return (min);
+}
+
 void	ft_next_min(t_list **a, int pos)
 {
 	t_list	*sig;
@@ -73,7 +91,6 @@ void	ft_setposition(t_list **a)
 		return ;
 	while (i < l)
 	{
-		printf("%d\n", i);
 		ft_next_min(a, i);
 		i++;
 	}
