@@ -54,3 +54,64 @@
 		// printf("\n\n...........REVERSE ROTATE............\n\n");
 		// ft_rra(&a);
 		// ft_lstprint(a);
+
+
+/*
+void	ft_order_stack_3(t_list **a)
+{
+	long int	min;
+	long int	max;
+
+	min = ft_get_min(*a)->num;
+	max = ft_get_max(*a)->num;
+	if ((*a)->num == min && (*a)->next->num == max)
+	{
+		printf("\n\n...........PRIMER MOVIMIENTO............\n\n");
+		ft_sa(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+		printf("\n\n...........SEGUNDO MOVIMIENTO............\n\n");
+		ft_ra(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+	}
+	else if ((*a)->next->num == min && ft_lstlast(*a)->num == max)
+	{
+		printf("\n\n...........PRIMER MOVIMIENTO............\n\n");
+		ft_sa(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+	}
+	else if ((*a)->next->num == max && ft_lstlast(*a)->num == min)
+	{
+		printf("\n\n...........PRIMER MOVIMIENTO............\n\n");
+		ft_rra(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+	}
+	else if ((*a)->num == max && (*a)->next->num == min)
+	{
+		printf("\n\n...........PRIMER MOVIMIENTO............\n\n");
+		ft_ra(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+	}
+	else if ((*a)->num == max && ft_lstlast(*a)->num == min)
+	{
+		printf("\n\n...........PRIMER MOVIMIENTO............\n\n");
+		ft_sa(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+		printf("\n\n...........SEGUNDO MOVIMIENTO............\n\n");
+		ft_rra(a);
+		ft_set_default_position(a);
+		ft_setposition(a);
+		ft_lstprint(*a);
+	}
+} */

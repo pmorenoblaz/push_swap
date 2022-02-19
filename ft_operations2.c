@@ -26,7 +26,7 @@ void	ft_rra(t_list **a)
 		ant = act;
 		act = act->next;
 	}
-	ft_lstadd_front(a, ft_lstnew(act->num));
+	ft_lstadd_front(a, ft_lstnew(act->num, act->list));
 	ant->next = 0;
 	ft_lstdelone(act);
 	if (ant->list == 0)

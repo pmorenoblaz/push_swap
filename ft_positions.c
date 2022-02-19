@@ -6,7 +6,7 @@
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 10:40:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/02/19 10:43:40 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/02/19 18:11:06 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_list	*ft_get_min(t_list *a)
 	min = sig;
 	if (!a)
 		return (0);
-	while (sig->next)
+	while (sig)
 	{
 		if (sig->num < min->num)
 			min = sig;
@@ -71,15 +71,12 @@ void	ft_next_min(t_list **a, int pos)
 	if (!a)
 		return ;
 	min = ft_get_max(*a);
-//	printf("max ---> %ld \n", min->num);
 	while (sig != 0)
 	{
 		if (sig->pos == -1 && sig->num < min->num)
 			min = sig;
-	//	printf("%ld  ..... \n", sig->num);
 		sig = sig->next;
 	}
-	//printf("num  .....> %ld\n", min->num);
 	min->pos = pos;
 }
 
@@ -94,7 +91,6 @@ void	ft_setposition(t_list **a)
 		return ;
 	while (i < l)
 	{
-		//printf("%d\n", i);
 		ft_next_min(a, i);
 		i++;
 	}

@@ -45,7 +45,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(int num);
+t_list	*ft_lstnew(int cnum, int v);
 void	ft_lstdelone(t_list *lst);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
@@ -75,9 +75,11 @@ t_list	*ft_get_max(t_list *a);
 t_list	*ft_get_min(t_list *a);
 
 //main.c
-int		ft_add_to_stack(char **argv, int argc, t_list **a);
-int		ft_valid_args(char	*arg, t_list **a);
+int		ft_add_to_stack(char **argv, int argc, t_list **a, int l_value);
+int		ft_valid_args(char	*arg, t_list **a, int l_value);
 void	ft_lstprint(t_list *list_a);
-void	ft_order_stack(t_list **a);
+
+//ft_3_elements_stack.c
+void	ft_order_stack_3(t_list **a);
 
 #endif

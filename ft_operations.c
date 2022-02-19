@@ -28,9 +28,9 @@ void	ft_sa(t_list **l)
 		ft_lstadd_front(l, sig);
 	}
 	if ((*l)->list == 0)
-		ft_putstr("pa\n");
+		ft_putstr("sa\n");
 	else
-		ft_putstr("pb\n");
+		ft_putstr("sb\n");
 }
 
 void	ft_ss(t_list **a, t_list **b)
@@ -68,7 +68,7 @@ void	ft_ra(t_list **a)
 		return ;
 	act = a[0];
 	a[0] = a[0]->next;
-	ft_lstadd_back(a, ft_lstnew(act->num));
+	ft_lstadd_back(a, ft_lstnew(act->num, act->list));
 	ft_set_default_position(a);
 	ft_lstprint(*a);
 	ft_setposition(a);

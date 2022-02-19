@@ -37,7 +37,7 @@ t_list	*ft_lstlast(t_list *lst)
 	return (sig);
 }
 
-t_list	*ft_lstnew(int cnum)
+t_list	*ft_lstnew(int cnum, int v)
 {
 	t_list	*lista;
 
@@ -45,6 +45,7 @@ t_list	*ft_lstnew(int cnum)
 	if (lista == 0)
 		return (0);
 	lista->num = cnum;
+	lista->list = v;
 	lista->next = NULL;
 	return (lista);
 }
