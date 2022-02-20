@@ -81,6 +81,7 @@ int	main(int argc, char **argv)
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
 		else if (argc <= 6)
+			// ft_ra(&a);
 			ft_order_stack_5(&a, &b);
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);

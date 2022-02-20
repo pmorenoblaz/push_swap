@@ -57,14 +57,15 @@ void	ft_pa(t_list **a, t_list **b)
 	if (!b)
 		return ;
 	act = (*a);
+	sig = act;
 	if (act->next)
 	{
-		printf("\n\n...........ERROR 1............\n\n");
+		printf("\n\n...........PA............\n\n");
 		sig = act->next;
-		ft_lstadd_front(b, ft_lstnew(act->num, act->list));
-		act->next = 0;
-		a[0] = sig;
 	}
+	ft_lstadd_front(b, ft_lstnew(act->num, act->list));
+	act->next = 0;
+	a[0] = sig;
 	ft_set_default_position(a);
 	ft_set_relative_position(a);
 	ft_setposition(a);
