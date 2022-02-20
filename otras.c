@@ -55,7 +55,6 @@
 		// ft_rra(&a);
 		// ft_lstprint(a);
 
-
 /*
 void	ft_order_stack_3(t_list **a)
 {

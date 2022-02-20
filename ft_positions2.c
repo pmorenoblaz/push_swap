@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_positions2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 17:51:04 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/02/18 17:52:45 by pmoreno-         ###   ########.fr       */
+/*   Created: 2022/02/20 10:43:16 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/02/20 10:43:53 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_putchr(char c)
+void	ft_set_relative_position(t_list **a)
 {
-	return (write(1, &c, 1));
-}
+	t_list	*sig;
+	int		i;
 
-void	ft_putstr(char *s)
-{
-	int	i;
-
+	sig = *a;
 	i = 0;
-	while (s[i])
-		i += ft_putchr(s[i]);
-}
-
-void	ft_lstprint(t_list *list_a)
-{
-	t_list	*aux;
-
-	aux = list_a;
-	while (aux)
+	if (!a)
+		return ;
+	while (sig)
 	{
-		if (aux)
-		{
-			printf("%ld ---> %d ---> %d \n", aux->num, aux->relpos, aux->pos);
-			aux = aux->next;
-		}
+		sig->relpos = i;
+		i++;
+		sig = sig->next;
 	}
-	printf("----------- -----------\na           b\n");
 }

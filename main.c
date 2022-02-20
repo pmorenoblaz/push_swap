@@ -65,6 +65,7 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		ft_set_default_position(&a);
+		ft_set_relative_position(&a);
 		ft_setposition(&a);
 		printf("\n\n...........STACK INICIAL............\n\n");
 		ft_lstprint(a);
@@ -76,7 +77,8 @@ int	main(int argc, char **argv)
 		}
 		if (argc <= 4)
 			ft_order_stack_3(&a);
-		// if (argc )
+
+		// if (argc <= 5)
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
 	}

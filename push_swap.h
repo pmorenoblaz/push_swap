@@ -20,12 +20,16 @@
 # include <fcntl.h>
 # include <sys/errno.h>
 # include <errno.h>
-/* gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c
-ft_lstsize_bonus.c ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c 
-ft_utils.c ft_lstdelone_bonus.c ft_operations2.c ft_positions.c */
+/* 
+gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c ft_lstsize_bonus.c 
+ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c ft_utils.c ft_lstdelone_bonus.c
+ft_operations2.c ft_positions.c ft_positions2.c ft_3_elements_stack.c 
+ft_operations.c
+*/
 typedef struct s_list
 {
 	int				pos;
+	int				relpos;
 	int				list;
 	int long		num;
 	struct s_list	*next;
@@ -73,6 +77,9 @@ void	ft_next_min(t_list **a, int pos);
 void	ft_setposition(t_list **a);
 t_list	*ft_get_max(t_list *a);
 t_list	*ft_get_min(t_list *a);
+
+//ft_positions2.c
+void	ft_set_relative_position(t_list **a);
 
 //main.c
 int		ft_add_to_stack(char **argv, int argc, t_list **a, int l_value);
