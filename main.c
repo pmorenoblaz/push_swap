@@ -52,6 +52,15 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a, int l_value)
 	return (1);
 }
 
+void	ft_initialization(t_list **a)
+{
+	ft_set_default_position(a);
+	ft_set_relative_position(a);
+	ft_setposition(a);
+	printf("\n\n...........STACK INICIAL............\n\n");
+	ft_lstprint(*a);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list		*a;
@@ -61,27 +70,15 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		if (ft_add_to_stack(argv, argc, &a, 0) == 0)
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
-		ft_set_default_position(&a);
-		ft_set_relative_position(&a);
-		ft_setposition(&a);
-		printf("\n\n...........STACK INICIAL............\n\n");
-		ft_lstprint(a);
-
+			ft_print_error();
+		ft_initialization(&a);
 		if (ft_repeated_nbr(a) == 0)
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
+			ft_print_error();
 		if (ft_lst_is_ordered(a) == 1)
 			return (0);
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
 		else if (argc <= 6)
-			// ft_ra(&a);
 			ft_order_stack_5(&a, &b);
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);

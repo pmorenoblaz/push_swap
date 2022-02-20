@@ -54,12 +54,12 @@ void	ft_lstdelone(t_list *lst);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 
-//Movements
 //ft_operations.c
 void	ft_sa(t_list **l);
 void	ft_ss(t_list **a, t_list **b);
 void	ft_pa(t_list **a, t_list **b);
 void	ft_ra(t_list **a);
+void	ft_rr(t_list **a, t_list **b);
 
 //ft_operations2.c
 void	ft_rra(t_list **a);
@@ -93,5 +93,8 @@ void	ft_order_stack_3(t_list **a);
 void	ft_order_stack_5(t_list **a, t_list **b);
 t_list	*ft_get_next_max(t_list *a, t_list *max);
 int		ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax);
+
+//ft_errors.c
+void	ft_print_error(void);
 
 #endif
