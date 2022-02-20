@@ -24,7 +24,7 @@
 gcc main.c list.c ft_split.c ft_strchr.c ft_atoi.c ft_lstsize_bonus.c 
 ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c ft_utils.c ft_lstdelone_bonus.c
 ft_operations2.c ft_positions.c ft_positions2.c ft_3_elements_stack.c 
-ft_operations.c
+ft_operations.c ft_5_elements_stack.c
 */
 typedef struct s_list
 {
@@ -88,5 +88,9 @@ void	ft_lstprint(t_list *list_a);
 
 //ft_3_elements_stack.c
 void	ft_order_stack_3(t_list **a);
+
+//ft_5_elements_stack.c
+void	ft_order_stack_5(t_list **a, t_list **b);
+t_list	*ft_get_next_max(t_list *a, int max);
 
 #endif

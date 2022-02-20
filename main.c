@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	t_list		*a;
 	t_list		*b;
 
+	b = 0;
 	if (argc > 1)
 	{
 		if (ft_add_to_stack(argv, argc, &a, 0) == 0)
@@ -75,10 +76,12 @@ int	main(int argc, char **argv)
 			write(2, "Error\n", 6);
 			return (0);
 		}
-		if (argc <= 4)
+		if (ft_lst_is_ordered(a) == 1)
+			return (0);
+		else if (argc <= 4)
 			ft_order_stack_3(&a);
-
-		// if (argc <= 5)
+		else if (argc <= 6)
+			ft_order_stack_5(&a, &b);
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
 	}
