@@ -26,6 +26,19 @@ void	ft_putstr(char *s)
 		i += ft_putchr(s[i]);
 }
 
+int	ft_continue(t_list **a)
+{
+	int		op;
+
+	op = -1;
+	ft_lstprint(*a);
+	printf("¿Seguimos?: \n");
+	scanf("%d", &op);
+	if (op == 0)
+		return (0);
+	return (1);
+}
+
 void	ft_lstprint(t_list *list_a)
 {
 	t_list	*aux;

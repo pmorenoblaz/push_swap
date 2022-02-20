@@ -68,8 +68,8 @@ void	ft_rrr(t_list **a, t_list **b);
 //ft_utils.c
 int		ft_putchr(char c);
 void	ft_putstr(char *s);
-void	ft_print_list(t_list **l);
 void	ft_lstprint(t_list *list_a);
+int		ft_continue(t_list **a);
 
 //ft_positions.c
 void	ft_set_default_position(t_list **a);
@@ -91,6 +91,8 @@ void	ft_order_stack_3(t_list **a);
 
 //ft_5_elements_stack.c
 void	ft_order_stack_5(t_list **a, t_list **b);
-t_list	*ft_get_next_max(t_list *a, int max);
+t_list	*ft_get_next_max(t_list *a, t_list *max);
+int		ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax);
+
 
 #endif

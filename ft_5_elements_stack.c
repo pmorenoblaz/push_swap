@@ -30,19 +30,6 @@ t_list	*ft_get_next_max(t_list *a, t_list *max)
 	return (nextmax);
 }
 
-int	ft_continue(t_list **a)
-{
-	int		op;
-
-	op = -1;
-	ft_lstprint(*a);
-	printf("¿Seguimos?: \n");
-	scanf("%d", &op);
-	if (op == 0)
-		return (0);
-	return (1);
-}
-
 int	ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax)
 {
 	while (ft_lstsize(*a) > 3)
