@@ -94,5 +94,4 @@ void	ft_order_stack_5(t_list **a, t_list **b);
 t_list	*ft_get_next_max(t_list *a, t_list *max);
 int		ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax);
 
-
 #endif
