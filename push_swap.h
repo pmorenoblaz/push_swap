@@ -84,15 +84,16 @@ void	ft_set_relative_position(t_list **a);
 //main.c
 int		ft_add_to_stack(char **argv, int argc, t_list **a, int l_value);
 int		ft_valid_args(char	*arg, t_list **a, int l_value);
-void	ft_lstprint(t_list *list_a);
+void	ft_initialization(t_list **a);
 
 //ft_3_elements_stack.c
 void	ft_order_stack_3(t_list **a);
 
 //ft_5_elements_stack.c
 void	ft_order_stack_5(t_list **a, t_list **b);
-t_list	*ft_get_next_max(t_list *a, t_list *max);
-int		ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax);
+t_list	*ft_get_next_max(t_list *a);
+t_list	*ft_get_next_min(t_list *a);
+int		ft_make_movement(t_list **a, t_list **b);
 
 //ft_errors.c
 void	ft_print_error(void);

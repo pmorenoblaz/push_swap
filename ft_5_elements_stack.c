@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-t_list	*ft_get_next_max(t_list *a, t_list *max)
+t_list	*ft_get_next_max(t_list *a)
 {
 	t_list	*nextmax;
 	t_list	*sig;
@@ -23,27 +23,43 @@ t_list	*ft_get_next_max(t_list *a, t_list *max)
 	nextmax = ft_get_min(a);
 	while (sig)
 	{
-		if (max != sig && sig->num > nextmax->num)
+		if (sig->num > nextmax->num)
 			nextmax = sig;
 		sig = sig->next;
 	}
 	return (nextmax);
 }
 
-int	ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax)
+t_list	*ft_get_next_min(t_list *a)
 {
+	t_list	*nextmin;
+	t_list	*sig;
+
+	sig = a;
+	if (!a)
+		return (0);
+	nextmin = ft_get_max(a);
+	while (sig)
+	{
+		if (sig->num < nextmin->num)
+			nextmin = sig;
+		sig = sig->next;
+	}
+	return (nextmin);
+}
+
+int	ft_make_movement(t_list **a, t_list **b)
+{
+	t_list	*min;
+
 	while (ft_lstsize(*a) > 3)
 	{
-		if ((*a)->pos == max->pos)
-		{
+		min = ft_get_next_min(*a);
+		if ((*a)->pos == min->pos)
 			ft_pa(a, b);
-			max->relpos = -1;
-		}
-		else if ((*a)->pos == nextmax->pos)
-			ft_pa(a, b);
-		else if (max->relpos <= (ft_lstsize(*a) - 1) / 2)
+		else if (min->relpos <= (ft_lstsize(*a) - 1) / 2)
 			ft_ra(a);
-		else if (max->relpos > (ft_lstsize(*a) - 1) / 2)
+		else if (min->relpos > (ft_lstsize(*a) - 1) / 2)
 			ft_rra(a);
 		if (ft_continue(a) == 0)
 			return (0);
@@ -53,12 +69,7 @@ int	ft_make_movement(t_list **a, t_list **b, t_list *max, t_list *nextmax)
 
 void	ft_order_stack_5(t_list **a, t_list **b)
 {
-	t_list	*max;
-	t_list	*nextmax;
-
-	max = ft_get_max(*a);
-	nextmax = ft_get_next_max(*a, max);
-	ft_make_movement(a, b, max, nextmax);
+	ft_make_movement(a, b);
 	ft_order_stack_3(a);
 	if ((*b)->next == 0)
 		ft_pa(b, a);
@@ -75,6 +86,4 @@ void	ft_order_stack_5(t_list **a, t_list **b)
 	}
 	if (ft_continue(a) == 0)
 		return ;
-	ft_ra(a);
-	ft_ra(a);
 }
