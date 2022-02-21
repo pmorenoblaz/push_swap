@@ -26,42 +26,6 @@ void	ft_set_default_position(t_list **a)
 	}
 }
 
-t_list	*ft_get_max(t_list *a)
-{
-	t_list	*sig;
-	t_list	*max;
-
-	sig = a;
-	max = sig;
-	if (!a)
-		return (0);
-	while (sig)
-	{
-		if (max->num < sig->num)
-			max = sig;
-		sig = sig->next;
-	}
-	return (max);
-}
-
-t_list	*ft_get_min(t_list *a)
-{
-	t_list	*sig;
-	t_list	*min;
-
-	sig = a;
-	min = sig;
-	if (!a)
-		return (0);
-	while (sig)
-	{
-		if (sig->num < min->num)
-			min = sig;
-		sig = sig->next;
-	}
-	return (min);
-}
-
 void	ft_next_min(t_list **a, int pos)
 {
 	t_list	*sig;
@@ -70,7 +34,7 @@ void	ft_next_min(t_list **a, int pos)
 	sig = *a;
 	if (!a)
 		return ;
-	min = ft_get_max(*a);
+	min = ft_get_next_max(*a);
 	while (sig != 0)
 	{
 		if (sig->pos == -1 && sig->num < min->num)
@@ -78,6 +42,23 @@ void	ft_next_min(t_list **a, int pos)
 		sig = sig->next;
 	}
 	min->pos = pos;
+}
+
+void	ft_set_relative_position(t_list **a)
+{
+	t_list	*sig;
+	int		i;
+
+	sig = *a;
+	i = 0;
+	if (!a)
+		return ;
+	while (sig)
+	{
+		sig->relpos = i;
+		i++;
+		sig = sig->next;
+	}
 }
 
 void	ft_setposition(t_list **a)

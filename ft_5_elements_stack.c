@@ -12,42 +12,6 @@
 
 #include "push_swap.h"
 
-t_list	*ft_get_next_max(t_list *a)
-{
-	t_list	*nextmax;
-	t_list	*sig;
-
-	sig = a;
-	if (!a)
-		return (0);
-	nextmax = ft_get_min(a);
-	while (sig)
-	{
-		if (sig->num > nextmax->num)
-			nextmax = sig;
-		sig = sig->next;
-	}
-	return (nextmax);
-}
-
-t_list	*ft_get_next_min(t_list *a)
-{
-	t_list	*nextmin;
-	t_list	*sig;
-
-	sig = a;
-	if (!a)
-		return (0);
-	nextmin = ft_get_max(a);
-	while (sig)
-	{
-		if (sig->num < nextmin->num)
-			nextmin = sig;
-		sig = sig->next;
-	}
-	return (nextmin);
-}
-
 int	ft_make_movement(t_list **a, t_list **b)
 {
 	t_list	*min;

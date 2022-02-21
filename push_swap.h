@@ -75,10 +75,6 @@ int		ft_continue(t_list **a);
 void	ft_set_default_position(t_list **a);
 void	ft_next_min(t_list **a, int pos);
 void	ft_setposition(t_list **a);
-t_list	*ft_get_max(t_list *a);
-t_list	*ft_get_min(t_list *a);
-
-//ft_positions2.c
 void	ft_set_relative_position(t_list **a);
 
 //main.c
@@ -91,11 +87,13 @@ void	ft_order_stack_3(t_list **a);
 
 //ft_5_elements_stack.c
 void	ft_order_stack_5(t_list **a, t_list **b);
-t_list	*ft_get_next_max(t_list *a);
-t_list	*ft_get_next_min(t_list *a);
 int		ft_make_movement(t_list **a, t_list **b);
 
 //ft_errors.c
 void	ft_print_error(void);
+
+//ft_get_max_and_min.c
+t_list	*ft_get_next_max(t_list *a);
+t_list	*ft_get_next_min(t_list *a);
 
 #endif

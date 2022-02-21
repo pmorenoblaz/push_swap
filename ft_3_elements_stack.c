@@ -17,8 +17,8 @@ void	ft_order_stack_3(t_list **a)
 	long int	min;
 	long int	max;
 
-	min = ft_get_min(*a)->num;
-	max = ft_get_max(*a)->num;
+	min = ft_get_next_min(*a)->num;
+	max = ft_get_next_max(*a)->num;
 	if ((*a)->num == min && (*a)->next->num == max)
 	{
 		ft_sa(a);
