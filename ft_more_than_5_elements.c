@@ -74,8 +74,8 @@ void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
 		elem = ft_less_movements(*a);
 		if (elem->relpos > (ft_lstsize(*a) - 1) / 2)
 			dir = 1;
-        pos = ft_cal_position(a, ft_lstsize(*a));
-		ft_make_movement(a, b, pos, dir);
+        pos = ft_cal_position(*a, ft_lstsize(*a));
+		ft_move_element(a, b, pos, dir);
 	}
 }
 
