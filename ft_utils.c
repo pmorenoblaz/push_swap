@@ -48,7 +48,7 @@ void	ft_lstprint(t_list *list_a)
 	{
 		if (aux)
 		{
-			printf("%ld ---> %d ---> %d \n", aux->num, aux->relpos, aux->pos);
+			printf("%ld ---> %d ---> %d --->%d\n", aux->num, aux->relpos, aux->pos, aux->ismaxormin);
 			aux = aux->next;
 		}
 	}

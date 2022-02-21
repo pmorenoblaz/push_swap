@@ -29,9 +29,7 @@ void	ft_rra(t_list **a)
 	ft_lstadd_front(a, ft_lstnew(act->num, act->list));
 	ant->next = 0;
 	ft_lstdelone(act);
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
+	ft_load_data(a);
 	if (ant->list == 0)
 		ft_putstr("rra\n");
 	else
@@ -42,11 +40,7 @@ void	ft_rrr(t_list **a, t_list **b)
 {
 	ft_rra(a);
 	ft_rra(b);
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
-	ft_set_default_position(b);
-	ft_set_relative_position(b);
-	ft_setposition(b);
+	ft_load_data(a);
+	ft_load_data(b);
 	ft_putstr("rrr\n");
 }

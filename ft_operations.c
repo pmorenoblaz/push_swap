@@ -27,9 +27,7 @@ void	ft_sa(t_list **l)
 		act->next = sig->next;
 		ft_lstadd_front(l, sig);
 	}
-	ft_set_default_position(l);
-	ft_set_relative_position(l);
-	ft_setposition(l);
+	ft_load_data(l);
 	if ((*l)->list == 0)
 		ft_putstr("sa\n");
 	else
@@ -40,12 +38,8 @@ void	ft_ss(t_list **a, t_list **b)
 {
 	ft_sa(a);
 	ft_sa(b);
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
-	ft_set_default_position(b);
-	ft_set_relative_position(b);
-	ft_setposition(b);
+	ft_load_data(a);
+	ft_load_data(b);
 	ft_putstr("ss\n");
 }
 
@@ -66,12 +60,8 @@ void	ft_pa(t_list **a, t_list **b)
 	ft_lstadd_front(b, ft_lstnew(act->num, act->list));
 	act->next = 0;
 	a[0] = sig;
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
-	ft_set_default_position(b);
-	ft_set_relative_position(b);
-	ft_setposition(b);
+	ft_load_data(a);
+	ft_load_data(b);
 	if ((*a)->list == 0)
 		ft_putstr("pa\n");
 	else
@@ -87,9 +77,7 @@ void	ft_ra(t_list **a)
 	act = a[0];
 	a[0] = a[0]->next;
 	ft_lstadd_back(a, ft_lstnew(act->num, act->list));
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
+	ft_load_data(a);
 	if ((*a)->list == 0)
 		ft_putstr("ra\n");
 	else
@@ -100,11 +88,7 @@ void	ft_rr(t_list **a, t_list **b)
 {
 	ft_ra(a);
 	ft_ra(b);
-	ft_set_default_position(a);
-	ft_set_relative_position(a);
-	ft_setposition(a);
-	ft_set_default_position(b);
-	ft_set_relative_position(b);
-	ft_setposition(b);
+	ft_load_data(a);
+	ft_load_data(b);
 	ft_putstr("rr\n");
 }

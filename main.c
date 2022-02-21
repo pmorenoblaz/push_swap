@@ -52,7 +52,7 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a, int l_value)
 	return (1);
 }
 
-void	ft_initialization(t_list **a)
+void	ft_load_data(t_list **a)
 {
 	ft_set_default_position(a);
 	ft_set_relative_position(a);
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	{
 		if (ft_add_to_stack(argv, argc, &a, 0) == 0)
 			ft_print_error();
-		ft_initialization(&a);
+		ft_load_data(&a);
 		if (ft_repeated_nbr(a) == 0)
 			ft_print_error();
 		if (ft_lst_is_ordered(a) == 1)
@@ -80,6 +80,11 @@ int	main(int argc, char **argv)
 			ft_order_stack_3(&a);
 		else if (argc <= 6)
 			ft_order_stack_5(&a, &b);
+		else
+		{
+			// printf("hola");
+			ft_algorithm(&a, &b);
+		}
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
 	}

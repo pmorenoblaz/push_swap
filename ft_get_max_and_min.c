@@ -47,3 +47,37 @@ t_list	*ft_get_next_min(t_list *a)
 	}
 	return (nextmin);
 }
+
+void	ft_next_nmin(t_list *a)
+{
+	t_list	*min;
+	t_list	*sig;
+
+	sig = a;
+	if (!a)
+		return ;
+	min = ft_get_next_max(a);
+	while (sig)
+	{
+		if (sig->num < min->num && sig->ismaxormin == 0)
+		{
+			min = sig;
+			sig->ismaxormin = 1;
+		}
+		sig = sig->next;
+	}
+}
+
+void	ft_set_nmins(t_list **a, int nunpbloc)
+{
+	int	i;
+
+	i = 0;
+	if (!a)
+		return ;
+	while (i < nunpbloc)
+	{
+		ft_next_nmin(*a);
+		i++;
+	}
+}

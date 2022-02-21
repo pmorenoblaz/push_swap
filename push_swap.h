@@ -32,6 +32,7 @@ typedef struct s_list
 	int				relpos;
 	int				list;
 	int long		num;
+	int				ismaxormin;
 	struct s_list	*next;
 }	t_list;
 
@@ -80,7 +81,7 @@ void	ft_set_relative_position(t_list **a);
 //main.c
 int		ft_add_to_stack(char **argv, int argc, t_list **a, int l_value);
 int		ft_valid_args(char	*arg, t_list **a, int l_value);
-void	ft_initialization(t_list **a);
+void	ft_load_data(t_list **a);
 
 //ft_3_elements_stack.c
 void	ft_order_stack_3(t_list **a);
@@ -95,5 +96,11 @@ void	ft_print_error(void);
 //ft_get_max_and_min.c
 t_list	*ft_get_next_max(t_list *a);
 t_list	*ft_get_next_min(t_list *a);
+void	ft_set_nmins(t_list **a, int nunpbloc);
+void	ft_next_nmin(t_list *a);
+
+void	ft_algorithm(t_list **a, t_list **b);
+t_list	*ft_less_movements(t_list *a);
+int		ft_cal_position(t_list *a, int len);
 
 #endif

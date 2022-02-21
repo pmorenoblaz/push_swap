@@ -46,6 +46,7 @@ t_list	*ft_lstnew(int cnum, int v)
 		return (0);
 	lista->num = cnum;
 	lista->list = v;
+	lista->ismaxormin = 0;
 	lista->next = NULL;
 	return (lista);
 }
