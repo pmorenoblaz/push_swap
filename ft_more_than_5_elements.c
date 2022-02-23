@@ -110,4 +110,6 @@ void	ft_algorithm(t_list **a, t_list **b)
 			return ;
 		i++;
 	}
+	ft_order_stack_5(a, b);
+	
 }
