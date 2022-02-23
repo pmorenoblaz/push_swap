@@ -26,14 +26,19 @@ void	ft_rra(t_list **a)
 		ant = act;
 		act = act->next;
 	}
-	ft_lstadd_front(a, ft_lstnew(act->num, act->list));
+	if ((*a)->list == 0)
+	{
+		ft_lstadd_front(a, ft_lstnew(act->num, 0));
+		ft_putstr("rra\n");
+	}
+	else
+	{
+		ft_lstadd_front(a, ft_lstnew(act->num, 1));
+		ft_putstr("rrb\n");
+	}
 	ant->next = 0;
 	ft_lstdelone(act);
 	ft_load_data(a);
-	if (ant->list == 0)
-		ft_putstr("rra\n");
-	else
-		ft_putstr("rrb\n");
 }
 
 void	ft_rrr(t_list **a, t_list **b)

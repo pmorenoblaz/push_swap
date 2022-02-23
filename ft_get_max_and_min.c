@@ -60,12 +60,10 @@ void	ft_next_nmin(t_list *a)
 	while (sig)
 	{
 		if (sig->num < min->num && sig->ismaxormin == 0)
-		{
 			min = sig;
-			sig->ismaxormin = 1;
-		}
 		sig = sig->next;
 	}
+	min->ismaxormin = 1;
 }
 
 void	ft_set_nmins(t_list **a, int nunpbloc)

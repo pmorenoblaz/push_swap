@@ -14,7 +14,9 @@
 
 int	ft_cal_position(t_list *a, int len)
 {
-	if ((a->relpos <= (len - 1) / 2))
+	if (a->relpos == len)
+		return (1);
+	else if ((a->relpos <= (len - 1) / 2))
 		return (a->relpos);
 	else
 		return (len - a->relpos);
@@ -35,11 +37,15 @@ t_list	*ft_less_movements(t_list *a)
 	{
 		if (sig->ismaxormin == 1)
 		{
-			if (pos > ft_cal_position(a, ft_lstsize(a)))
+			if (ft_cal_position(sig, ft_lstsize(a)) < pos)
+			{
 				lessom = sig;
+				pos = ft_cal_position(lessom, ft_lstsize(a));
+			}
 		}
 		sig = sig->next;
 	}
+	printf("El número más cercano es: %ld\n", lessom->num);
 	return (lessom);
 }
 
@@ -57,6 +63,7 @@ void	ft_move_element(t_list **a, t_list **b, int n, int dir)
 		i++;
 	}
 	ft_pa(a, b);
+	ps_print_column(*a, *b);
 }
 
 void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
@@ -64,38 +71,43 @@ void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
 	int		i;
 	t_list	*elem;
 	int		dir;
-    int     pos;
+	int		pos;
 
 	i = 0;
 	dir = 0;
-    pos = 0;
+	pos = 0;
 	while (i < numpbloc)
 	{
 		elem = ft_less_movements(*a);
 		if (elem->relpos > (ft_lstsize(*a) - 1) / 2)
 			dir = 1;
-        pos = ft_cal_position(*a, ft_lstsize(*a));
+		pos = ft_cal_position(elem, ft_lstsize(*a));
+		printf("El número de posiciones es: %d\n", pos);
 		ft_move_element(a, b, pos, dir);
+		ft_load_data(a);
+		i++;
 	}
 }
 
 void	ft_algorithm(t_list **a, t_list **b)
 {
 	int	bloques;
-	int	totaln;
+	int	totalmin;
 	int	numpbloc;
 	int	i;
 
-	totaln = ft_lstsize(*a) - 5;
-	bloques = ((totaln / 50) + 3);
-	numpbloc = totaln / bloques;
+	totalmin = ft_lstsize(*a) - 5;
+	bloques = ((ft_lstsize(*a) / 50) + 3);
+	numpbloc = totalmin / bloques;
 	i = 0;
-	ft_lstprint(*a);
+	printf("El número de bloques es: %d\n", bloques);
 	while (i < bloques)
 	{
+		printf("El número de minimos es: %d\n", numpbloc);
 		ft_set_nmins(a, numpbloc);
-		ft_lstprint(*a);
 		ft_push_elements(a, b, numpbloc);
+		if (ft_continue(a) == 0)
+			return ;
 		i++;
 	}
 }

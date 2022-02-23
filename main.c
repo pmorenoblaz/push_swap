@@ -57,8 +57,6 @@ void	ft_load_data(t_list **a)
 	ft_set_default_position(a);
 	ft_set_relative_position(a);
 	ft_setposition(a);
-	printf("\n\n...........STACK INICIAL............\n\n");
-	ft_lstprint(*a);
 }
 
 int	main(int argc, char **argv)
@@ -78,15 +76,17 @@ int	main(int argc, char **argv)
 			return (0);
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
-		else if (argc <= 6)
+		else if (argc <= 31)
 			ft_order_stack_5(&a, &b);
 		else
 		{
-			// printf("hola");
+			printf("hace esto");
+			// ft_radix_sort(&a, &b);
 			ft_algorithm(&a, &b);
 		}
 		printf("\n\n...........STACK FINAL............\n\n");
 		ft_lstprint(a);
+		ps_print_column(a, b);
 	}
 	else
 		write(2, "Error\n", 6);

@@ -52,20 +52,17 @@ void	ft_pa(t_list **a, t_list **b)
 		return ;
 	act = (*a);
 	sig = act;
-	if (act->next)
-	{
-		printf("\n\n...........PA............\n\n");
-		sig = act->next;
-	}
-	ft_lstadd_front(b, ft_lstnew(act->num, act->list));
-	act->next = 0;
-	a[0] = sig;
-	ft_load_data(a);
-	ft_load_data(b);
 	if ((*a)->list == 0)
+	{
+		ft_lstadd_front(b, ft_lstnew(act->num, 0));
 		ft_putstr("pa\n");
+	}
 	else
+	{
+		ft_lstadd_front(b, ft_lstnew(act->num, 1));
 		ft_putstr("pb\n");
+	}
+	(*a) = sig->next;
 }
 
 void	ft_ra(t_list **a)
@@ -76,12 +73,17 @@ void	ft_ra(t_list **a)
 		return ;
 	act = a[0];
 	a[0] = a[0]->next;
-	ft_lstadd_back(a, ft_lstnew(act->num, act->list));
-	ft_load_data(a);
 	if ((*a)->list == 0)
+	{
+		ft_lstadd_back(a, ft_lstnew(act->num, 0));
 		ft_putstr("ra\n");
+	}
 	else
+	{
+		ft_lstadd_back(a, ft_lstnew(act->num, 1));
 		ft_putstr("rb\n");
+	}
+	ft_load_data(a);
 }
 
 void	ft_rr(t_list **a, t_list **b)

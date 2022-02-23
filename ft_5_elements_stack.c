@@ -37,17 +37,11 @@ void	ft_order_stack_5(t_list **a, t_list **b)
 	ft_order_stack_3(a);
 	if ((*b)->next == 0)
 		ft_pa(b, a);
-	else if ((*b)->num > (*b)->next->num)
-	{
-		ft_pa(b, a);
-		ft_pa(b, a);
-	}
-	else
-	{
+	else if ((*b)->next->num > (*b)->num)
 		ft_sa(b);
+	while ((*b) != 0)
 		ft_pa(b, a);
-		ft_pa(b, a);
-	}
+	ps_print_column(*a, *b);
 	if (ft_continue(a) == 0)
 		return ;
 }

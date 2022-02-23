@@ -103,4 +103,7 @@ void	ft_algorithm(t_list **a, t_list **b);
 t_list	*ft_less_movements(t_list *a);
 int		ft_cal_position(t_list *a, int len);
 
+void	ps_print_column(t_list *column_a, t_list *column_b);
+void	ft_radix_sort(t_list **lst_a, t_list **lst_b);
+
 #endif
