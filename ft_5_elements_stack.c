@@ -25,8 +25,6 @@ int	ft_make_movement(t_list **a, t_list **b)
 			ft_ra(a);
 		else if (min->relpos > (ft_lstsize(*a) - 1) / 2)
 			ft_rra(a);
-		if (ft_continue(a) == 0)
-			return (0);
 	}
 	return (1);
 }
@@ -39,9 +37,6 @@ void	ft_order_stack_5(t_list **a, t_list **b)
 		ft_pa(b, a);
 	else if ((*b)->next->num > (*b)->num)
 		ft_sa(b);
-	while ((*b) != 0)
-		ft_pa(b, a);
-	ps_print_column(*a, *b);
-	if (ft_continue(a) == 0)
-		return ;
+	ft_pa(b, a);
+	ft_pa(b, a);
 }

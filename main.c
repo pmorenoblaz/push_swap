@@ -80,13 +80,13 @@ int	main(int argc, char **argv)
 			ft_order_stack_5(&a, &b);
 		else
 		{
-			printf("hace esto");
+			// printf("hace esto");
 			// ft_radix_sort(&a, &b);
 			ft_algorithm(&a, &b);
 		}
-		printf("\n\n...........STACK FINAL............\n\n");
-		ft_lstprint(a);
-		ps_print_column(a, b);
+		// printf("\n\n...........STACK FINAL............\n\n");
+		// ft_lstprint(a);
+		// ps_print_column(a, b);
 	}
 	else
 		write(2, "Error\n", 6);
