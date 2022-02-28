@@ -35,7 +35,8 @@ void	ft_putstr(char *s)
 // 	{
 // 		if (aux)
 // 		{
-// 			printf("%ld ---> %d ---> %d --->%d\n", aux->num, aux->relpos, aux->pos, aux->ismaxormin);
+// 			printf("%ld ---> %d ---> %d --->%d\n", aux->num,
+//					aux->relpos, aux->pos, aux->ismaxormin);
 // 			aux = aux->next;
 // 		}
 // 	}
@@ -53,7 +54,8 @@ void	ft_putstr(char *s)
 // 	{
 // 		if (aux && aux2)
 // 		{
-// 			printf("%ld-->%d          %ld\n", aux->num, aux->ismaxormin, aux2->num);
+// 			printf("%ld-->%d          %ld\n",
+//				aux->num, aux->ismaxormin, aux2->num);
 // 			aux = aux->next;
 // 			aux2 = aux2->next;
 // 		}

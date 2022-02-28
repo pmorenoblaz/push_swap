@@ -12,6 +12,19 @@
 
 #include "push_swap.h"
 
+void	free_variables2(char **list, int argc)
+{
+	int		i;
+
+	i = 2;
+	while (i < argc - 1)
+	{
+		free(list[i]);
+		i++;
+	}
+	free(*list);
+}
+
 int	ft_valid_args(char	*arg, t_list **a, int l_value)
 {
 	char	**list;
@@ -35,6 +48,7 @@ int	ft_valid_args(char	*arg, t_list **a, int l_value)
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(list[i]), l_value));
 		i++;
 	}
+	free_variables2(list, i);
 	return (1);
 }
 
@@ -59,11 +73,31 @@ void	ft_load_data(t_list **a)
 	ft_setposition(a);
 }
 
+void	leaks(void)
+{
+	system("leaks push_swap");
+}
+
+void	free_variables(t_list **comm_dir)
+{
+	t_list	*sig;
+
+	sig = (*comm_dir);
+	while (sig)
+	{
+		sig = (*comm_dir)->next;
+		free((*comm_dir));
+		(*comm_dir) = sig;
+	}
+	free(*comm_dir);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list		*a;
 	t_list		*b;
 
+	//atexit(leaks);
 	b = 0;
 	if (argc > 1)
 	{
@@ -76,19 +110,14 @@ int	main(int argc, char **argv)
 			return (0);
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
-		else if (argc <= 31)
+		else if (argc <= 5)
 			ft_order_stack_5(&a, &b);
 		else
-		{
-			// printf("hace esto");
-			// ft_radix_sort(&a, &b);
 			ft_algorithm(&a, &b);
-		}
-		// printf("\n\n...........STACK FINAL............\n\n");
-		// ft_lstprint(a);
-		// ps_print_column(a, b);
+		free_variables(&a);
+		free_variables(&b);
 	}
 	else
-		write(2, "Error\n", 6);
+		ft_print_error();
 	return (0);
 }
