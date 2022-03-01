@@ -102,6 +102,7 @@ void	ft_algorithm(t_list **a, t_list **b);
 t_list	*ft_less_movements(t_list *a);
 int		ft_cal_position(t_list *a, int len);
 
+int		ft_continue();
 void	ps_print_column(t_list *column_a, t_list *column_b);
 void	ft_move_element_b(t_list **a, t_list **b, int n, int dir);
 void	ft_order_stack(t_list **a, t_list **b);

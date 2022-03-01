@@ -37,6 +37,6 @@ void	ft_order_stack_5(t_list **a, t_list **b)
 		ft_pa(b, a);
 	else if ((*b)->next->num > (*b)->num)
 		ft_sa(b);
-	ft_pa(b, a);
-	ft_pa(b, a);
+	while (*b)
+		ft_pa(b, a);
 }

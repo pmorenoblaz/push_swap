@@ -16,11 +16,25 @@ void	free_variables2(char **list, int argc)
 {
 	int		i;
 
-	i = 2;
-	while (i < argc - 1)
+	i = 0;
+	while (i < argc)
 	{
 		free(list[i]);
 		i++;
+	}
+	free(list);
+}
+
+void	free_variables(t_list **list)
+{
+	t_list	*sig;
+
+	sig = (*list);
+	while (sig)
+	{
+		sig = (*list)->next;
+		free((*list));
+		(*list) = sig;
 	}
 	free(*list);
 }
@@ -42,7 +56,10 @@ int	ft_valid_args(char	*arg, t_list **a, int l_value)
 		while (list[i][j])
 		{
 			if (list[i][j] < '0' || list[i][j] > '9')
+			{
+				free_variables2(list, i);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 				return (0);
+			}
 			j++;
 		}
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(list[i]), l_value));
@@ -60,10 +77,18 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a, int l_value)
 	while (i < argc)
 	{
 		if (ft_valid_args(argv[i], a, l_value) == 0)
+		{
+			free_variables(a);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
+}
+
+void	leaks(void)
+{
+	system("leaks push_swap");
 }
 
 void	ft_load_data(t_list **a)
@@ -73,31 +98,14 @@ void	ft_load_data(t_list **a)
 	ft_setposition(a);
 }
 
-void	leaks(void)
-{
-	system("leaks push_swap");
-}
 
-void	free_variables(t_list **comm_dir)
-{
-	t_list	*sig;
-
-	sig = (*comm_dir);
-	while (sig)
-	{
-		sig = (*comm_dir)->next;
-		free((*comm_dir));
-		(*comm_dir) = sig;
-	}
-	free(*comm_dir);
-}
 
 int	main(int argc, char **argv)
 {
 	t_list		*a;
 	t_list		*b;
 
-	//atexit(leaks);
+	atexit(leaks);
 	b = 0;
 	if (argc > 1)
 	{
@@ -110,14 +118,15 @@ int	main(int argc, char **argv)
 			return (0);
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
-		else if (argc <= 5)
+		else if (argc <= 6)
 			ft_order_stack_5(&a, &b);
 		else
 			ft_algorithm(&a, &b);
+		ps_print_column(a, b);
 		free_variables(&a);
 		free_variables(&b);
 	}
 	else
-		ft_print_error();
+		write(2, "Error\n", 6);
 	return (0);
 }

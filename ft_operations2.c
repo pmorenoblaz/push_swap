@@ -29,16 +29,15 @@ void	ft_rra(t_list **a)
 	if ((*a)->list == 0)
 	{
 		ft_lstadd_front(a, ft_lstnew(act->num, 0));
-		free(act);
 		ft_putstr("rra\n");
 	}
 	else
 	{
 		ft_lstadd_front(a, ft_lstnew(act->num, 1));
-		free(act);
 		ft_putstr("rrb\n");
 	}
 	ant->next = 0;
+	ft_lstdelone(act);
 	ft_load_data(a);
 }
 

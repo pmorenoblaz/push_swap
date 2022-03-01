@@ -45,6 +45,7 @@ t_list	*ft_less_movements(t_list *a)
 		}
 		sig = sig->next;
 	}
+	// printf("El número más cercano es: %ld\n", lessom->num);
 	return (lessom);
 }
 
@@ -62,6 +63,7 @@ void	ft_move_element(t_list **a, t_list **b, int n, int dir)
 		i++;
 	}
 	ft_pa(a, b);
+	//ps_print_column(*a, *b);
 }
 
 void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
@@ -80,10 +82,13 @@ void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
 		if (elem->relpos > (ft_lstsize(*a) - 1) / 2)
 			dir = 1;
 		pos = ft_cal_position(elem, ft_lstsize(*a));
+		// printf("El número de posiciones es: %d\n", pos);
 		ft_move_element(a, b, pos, dir);
 		ft_load_data(a);
 		i++;
 	}
+	if ((*b))
+		ft_pa(b, a);
 }
 
 void	ft_algorithm(t_list **a, t_list **b)
@@ -97,12 +102,17 @@ void	ft_algorithm(t_list **a, t_list **b)
 	bloques = ((ft_lstsize(*a) / 50) + 3);
 	numpbloc = totalmin / bloques;
 	i = 0;
+	// printf("El número de bloques es: %d\n", bloques);
 	while (i < bloques)
 	{
+		// printf("El número de minimos es: %d\n", numpbloc);
 		ft_set_nmins(a, numpbloc);
 		ft_push_elements(a, b, numpbloc);
+		// if (ft_continue() == 0)
+		// 	return ;
 		i++;
 	}
+
 	ft_order_stack_5(a, b);
 	ft_order_stack(a, b);
 }
