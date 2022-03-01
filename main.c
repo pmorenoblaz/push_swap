@@ -12,42 +12,15 @@
 
 #include "push_swap.h"
 
-void	free_variables2(char **list, int argc)
-{
-	int		i;
-
-	i = 0;
-	while (i < argc)
-	{
-		free(list[i]);
-		i++;
-	}
-	free(list);
-}
-
-void	free_variables(t_list **list)
-{
-	t_list	*sig;
-
-	sig = (*list);
-	while (sig)
-	{
-		sig = (*list)->next;
-		free((*list));
-		(*list) = sig;
-	}
-	free(*list);
-}
-
 int	ft_valid_args(char	*arg, t_list **a, int l_value)
 {
 	char	**list;
 	int		i;
 	int		j;
 
-	i = 0;
+	i = -1;
 	list = ft_split(arg, ' ');
-	while (list[i])
+	while (list[++i])
 	{
 		j = 0;
 		if ((list[i][j] == '-' || list[i][j] == '+')
@@ -57,13 +30,12 @@ int	ft_valid_args(char	*arg, t_list **a, int l_value)
 		{
 			if (list[i][j] < '0' || list[i][j] > '9')
 			{
-				free_variables2(list, i);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+				free_variables2(list, i);
 				return (0);
 			}
 			j++;
 		}
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(list[i]), l_value));
-		i++;
 	}
 	free_variables2(list, i);
 	return (1);
@@ -86,11 +58,6 @@ int	ft_add_to_stack(char **argv, int argc, t_list **a, int l_value)
 	return (1);
 }
 
-void	leaks(void)
-{
-	system("leaks push_swap");
-}
-
 void	ft_load_data(t_list **a)
 {
 	ft_set_default_position(a);
@@ -98,31 +65,39 @@ void	ft_load_data(t_list **a)
 	ft_setposition(a);
 }
 
-
+void	ft_order_par(t_list **a, t_list **b)
+{
+	if ((*a) == ft_get_next_min(*a))
+		ft_pa(a, b);
+	else if ((*a) == ft_get_next_max(*a))
+		ft_ra(a);
+	else if ((*a)->num > ((*a)->next)->num)
+		ft_sa(a);
+	else
+		ft_ra(a);
+}
 
 int	main(int argc, char **argv)
 {
 	t_list		*a;
 	t_list		*b;
 
-	//atexit(leaks);
 	b = 0;
 	if (argc > 1)
 	{
-		if (ft_add_to_stack(argv, argc, &a, 0) == 0)
-			ft_print_error();
-		ft_load_data(&a);
-		if (ft_repeated_nbr(a) == 0)
-			ft_print_error();
+		ft_first_step(&a, argv, argc);
 		if (ft_lst_is_ordered(a) == 1)
 			return (0);
-		else if (argc <= 4)
+		if (argc <= 4)
 			ft_order_stack_3(&a);
-		else if (argc <= 7)
+		if (argc <= 6)
 			ft_order_stack_5(&a, &b);
 		else
 			ft_algorithm(&a, &b);
-		ps_print_column(a, b);
+		while (ft_lst_is_ordered(a) != 1)
+			ft_order_par(&a, &b);
+		while (b)
+			ft_order_final_stack(&a, &b);
 		free_variables(&a);
 		free_variables(&b);
 	}

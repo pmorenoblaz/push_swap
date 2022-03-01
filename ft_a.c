@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_a.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 17:22:09 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/01 17:22:20 by pmoreno-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_move_element_b(t_list **a, t_list **b, int n, int dir)
@@ -34,21 +46,21 @@ t_list	*ft_get_next_maxpos(t_list *a)
 	return (nextmax);
 }
 
-void    ft_order_stack(t_list **a, t_list **b)
+void	ft_order_final_stack(t_list **a, t_list **b)
 {
-    t_list *aux;
-    int     pos;
-    int     dir;
+	t_list	*aux;
+	int		pos;
+	int		dir;
 
 	ft_load_data(b);
-    while ((*b) != 0)
-    {
+	while ((*b) != 0)
+	{
 		dir = 0;
-        aux = ft_get_next_maxpos(*b);
-        pos = ft_cal_position(aux, ft_lstsize(*b));
-        if (aux->relpos > (ft_lstsize(*b) - 1) / 2)
+		aux = ft_get_next_maxpos(*b);
+		pos = ft_cal_position(aux, ft_lstsize(*b));
+		if (aux->relpos > (ft_lstsize(*b) - 1) / 2)
 			dir = 1;
-        ft_move_element_b(a, b, pos, dir);
+		ft_move_element_b(a, b, pos, dir);
 		ft_load_data(b);
-    }
+	}
 }

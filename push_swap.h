@@ -102,9 +102,11 @@ void	ft_algorithm(t_list **a, t_list **b);
 t_list	*ft_less_movements(t_list *a);
 int		ft_cal_position(t_list *a, int len);
 
-int		ft_continue();
-void	ps_print_column(t_list *column_a, t_list *column_b);
+void	free_variables(t_list **list);
+void	free_variables2(char **list, int argc);
+void	ft_order_par(t_list **list_a, t_list **list_b);
 void	ft_move_element_b(t_list **a, t_list **b, int n, int dir);
-void	ft_order_stack(t_list **a, t_list **b);
+void	ft_order_final_stack(t_list **a, t_list **b);
+void	ft_first_step(t_list **a, char **argv, int argc);
 
 #endif
