@@ -105,7 +105,7 @@ int	main(int argc, char **argv)
 	t_list		*a;
 	t_list		*b;
 
-	atexit(leaks);
+	//atexit(leaks);
 	b = 0;
 	if (argc > 1)
 	{
@@ -118,7 +118,7 @@ int	main(int argc, char **argv)
 			return (0);
 		else if (argc <= 4)
 			ft_order_stack_3(&a);
-		else if (argc <= 6)
+		else if (argc <= 7)
 			ft_order_stack_5(&a, &b);
 		else
 			ft_algorithm(&a, &b);
