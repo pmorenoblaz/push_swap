@@ -35,21 +35,21 @@ void	ft_first_step(t_list **a, char **argv, int argc)
 		ft_print_error();
 }
 
-// void	ft_lstprint(t_list *list_a)
-// {
-// 	t_list	*aux;
+void	ft_lstprint(t_list *list_a)
+{
+	t_list	*aux;
 
-// 	aux = list_a;
-// 	while (aux)
-// 	{
-// 		if (aux)
-// 		{
-// 			printf("%ld ---> %d ---> %d\n", aux->num, aux->relpos, aux->pos);
-// 			aux = aux->next;
-// 		}
-// 	}
-// 	printf("----------- -----------\na           b\n");
-// }
+	aux = list_a;
+	while (aux)
+	{
+		if (aux)
+		{
+			printf("%ld ---> %d ---> %d\n", aux->num, aux->relpos, aux->pos);
+			aux = aux->next;
+		}
+	}
+	printf("----------- -----------\na           b\n");
+}
 
 // int	ft_continue(void)
 // {
@@ -63,31 +63,31 @@ void	ft_first_step(t_list **a, char **argv, int argc)
 // 	return (1);
 // }
 
-// void	ps_print_column(t_list *column_a, t_list *column_b)
-// {
-// 	t_list	*aux;
-// 	t_list	*aux2;
+void	ps_print_column(t_list *column_a, t_list *column_b)
+{
+	t_list	*aux;
+	t_list	*aux2;
 
-// 	aux = column_a;
-// 	aux2 = column_b;
-// 	while (aux || aux2)
-// 	{
-// 		if (aux && aux2)
-// 		{
-// 			printf("%ld-->%d     %ld\n", aux->num, aux->ismaxormin, aux2->num);
-// 			aux = aux->next;
-// 			aux2 = aux2->next;
-// 		}
-// 		else if (aux && !aux2)
-// 		{
-// 			printf("%ld-->%d         .\n", aux->num, aux->ismaxormin);
-// 			aux = aux->next;
-// 		}
-// 		else if (!aux && aux2)
-// 		{
-// 			printf(".            %ld\n", aux2->num);
-// 			aux2 = aux2->next;
-// 		}
-// 	}
-// 	printf("----------- -----------\na           b\n");
-// }
+	aux = column_a;
+	aux2 = column_b;
+	while (aux || aux2)
+	{
+		if (aux && aux2)
+		{
+			printf("%ld-->%d     %ld\n", aux->num, aux->ismaxormin, aux2->num);
+			aux = aux->next;
+			aux2 = aux2->next;
+		}
+		else if (aux && !aux2)
+		{
+			printf("%ld-->%d         .\n", aux->num, aux->ismaxormin);
+			aux = aux->next;
+		}
+		else if (!aux && aux2)
+		{
+			printf(".            %ld\n", aux2->num);
+			aux2 = aux2->next;
+		}
+	}
+	printf("----------- -----------\na           b\n");
+}

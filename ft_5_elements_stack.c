@@ -31,12 +31,27 @@ int	ft_make_movement(t_list **a, t_list **b)
 
 void	ft_order_stack_5(t_list **a, t_list **b)
 {
+	// ft_lstprint(*a);
 	ft_make_movement(a, b);
+	// ft_lstprint(*a);
 	ft_order_stack_3(a);
+	// ft_lstprint(*a);
 	if ((*b)->next == 0)
+	{	
 		ft_pa(b, a);
-	else if ((*b)->next->num > (*b)->num)
+	}
+	else if ((*b)->num > (*b)->next->num)
+	{
+		ft_pa(b, a);
+		ft_pa(b, a);
+	}
+	else
+	{
 		ft_sa(b);
-	ft_pa(b, a);
-	ft_pa(b, a);
+		ft_pa(b, a);
+		ft_pa(b, a);
+	}
+	ft_load_data(a);
+	ps_print_column(*a, *b);
+	// ft_lstprint(*a);
 }

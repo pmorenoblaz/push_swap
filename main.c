@@ -90,18 +90,19 @@ int	main(int argc, char **argv)
 			return (0);
 		if (argc <= 4)
 			ft_order_stack_3(&a);
-		if (argc <= 6)
+		else if (argc <= 6)
 			ft_order_stack_5(&a, &b);
 		else
-			ft_algorithm(&a, &b);
-		while (ft_lst_is_ordered(a) != 1)
-			ft_order_par(&a, &b);
-		while (b)
-			ft_order_final_stack(&a, &b);
+		{
+			// if (argc > 4)
+				ft_algorithm(&a, &b);
+			while (ft_lst_is_ordered(a) != 1)
+				ft_order_par(&a, &b);
+			while (b)
+				ft_order_final_stack(&a, &b);
+		}
 		free_variables(&a);
 		free_variables(&b);
 	}
-	else
-		write(2, "Error\n", 6);
 	return (0);
 }

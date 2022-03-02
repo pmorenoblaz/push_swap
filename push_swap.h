@@ -69,7 +69,8 @@ void	ft_rrr(t_list **a, t_list **b);
 //ft_utils.c
 int		ft_putchr(char c);
 void	ft_putstr(char *s);
-// void	ft_lstprint(t_list *list_a);
+void	ft_lstprint(t_list *list_a);
+void	ps_print_column(t_list *column_a, t_list *column_b);
 
 //ft_positions.c
 void	ft_set_default_position(t_list **a);
