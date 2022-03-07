@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/02/18 17:54:05 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:16:13 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_valid_args(char	*arg, t_list **a, int l_value)
 	list = ft_split(arg, ' ');
 	while (list[++i])
 	{
+		// printf("%c\n", list[i][0]);		
 		j = 0;
 		if ((list[i][j] == '-' || list[i][j] == '+')
 			&& (ft_strlen(list[i]) > 1))
@@ -83,24 +84,26 @@ int	main(int argc, char **argv)
 	t_list		*b;
 
 	b = 0;
+	a = 0;
 	if (argc > 1)
 	{
 		ft_first_step(&a, argv, argc);
+		// ps_print_column(a, b);
 		if (ft_lst_is_ordered(a) == 1)
 			return (0);
-		if (argc <= 4)
+		if (ft_lstsize(a) <= 3)
 			ft_order_stack_3(&a);
-		else if (argc <= 6)
+		else if (ft_lstsize(a) <= 5)
 			ft_order_stack_5(&a, &b);
 		else
 		{
-			// if (argc > 4)
-				ft_algorithm(&a, &b);
+			ft_algorithm(&a, &b);
 			while (ft_lst_is_ordered(a) != 1)
 				ft_order_par(&a, &b);
 			while (b)
 				ft_order_final_stack(&a, &b);
 		}
+		ps_print_column(a, b);
 		free_variables(&a);
 		free_variables(&b);
 	}
