@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:44:32 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/07 12:17:28 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:23:53 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	ft_push_elements(t_list **a, t_list **b, int numpbloc)
 			dir = 1;
 		pos = ft_cal_position(elem, ft_lstsize(*a));
 		ft_move_element(a, b, pos, dir);
-		ft_load_data(a);
+		// ft_load_data(a);
 		i++;
 	}
 	if ((*b))
@@ -103,7 +103,7 @@ void	ft_algorithm(t_list **a, t_list **b)
 	{
 		ft_set_nmins(a, numpbloc);
 		ft_push_elements(a, b, numpbloc);
-		ps_print_column(*a, *b);
+		// ps_print_column(*a, *b);
 		i++;
 	}
 }

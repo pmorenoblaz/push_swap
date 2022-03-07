@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:09:20 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/07 12:00:06 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:22:58 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,8 @@ int	ft_make_movement(t_list **a, t_list **b)
 
 void	ft_order_stack_5(t_list **a, t_list **b)
 {
-	// ft_lstprint(*a);
 	ft_make_movement(a, b);
-	// ft_lstprint(*a);
 	ft_order_stack_3(a);
-	// ft_lstprint(*a);
 	if ((*b)->next == 0)
 	{	
 		ft_pa(b, a);

@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/07 12:16:13 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:23:57 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	main(int argc, char **argv)
 			while (b)
 				ft_order_final_stack(&a, &b);
 		}
-		ps_print_column(a, b);
+		// ps_print_column(a, b);
 		free_variables(&a);
 		free_variables(&b);
 	}
