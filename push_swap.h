@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 17:22:17 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:24:50 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_rrb(t_list **b);
 void	ft_rrr(t_list **a, t_list **b);
 
 // Libft
+t_list	*ft_lstnew_aux(int cnum, int pos);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *str);
