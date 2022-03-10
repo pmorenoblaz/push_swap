@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/19 18:09:20 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 13:27:07 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:14:01 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_make_movement(t_list **a, t_list **b)
 	while (ft_lstsize(*a) > 3)
 	{
 		min = ft_get_next_min(*a);
-		if ((*a)->pos == min->pos)
+		if ((*a)->num == min->num)
 			ft_pb(a, b);
-		else if (min->pos <= (ft_lstsize(*a)) / 2)
+		else if (min->num <= (ft_lstsize(*a) - 1) / 2)
 			ft_ra(a);
-		else if (min->pos > (ft_lstsize(*a)) / 2)
+		else if (min->num > (ft_lstsize(*a) - 1) / 2)
 			ft_rra(a);
 	}
 	return (1);
