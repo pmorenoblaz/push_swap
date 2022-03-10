@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_getmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:29:06 by pmoreno-         ###   ########.fr       */
+/*   Created: 2022/03/10 15:53:34 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/10 15:53:35 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_list	*ft_get_next_max(t_list *a)
 {
-	t_list		*a;
-	t_list		*b;
+	t_list	*nextmax;
+	t_list	*sig;
 
-	b = 0;
-	if (argc > 1)
+	sig = a;
+	if (!a)
+		return (0);
+	nextmax = sig;
+	while (sig)
 	{
-		ft_first_step(&a, argv, argc);
-		if (ft_lst_is_ordered(a) == 1)
-			return (0);
-		if (ft_lstsize(a) <= 3)
-			ft_order_stack_3(&a);
-		else if (ft_lstsize(a) <= 5)
-			ft_order_stack_5(&a, &b);
-		ft_lstprint(a);
-		free_variables(&a);
-		free_variables(&b);
+		if (sig->num > nextmax->num)
+			nextmax = sig;
+		sig = sig->next;
 	}
-	else
-		write(2, "Error\n", 6);
-	return (0);
+	return (nextmax);
 }

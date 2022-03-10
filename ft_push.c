@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:29:06 by pmoreno-         ###   ########.fr       */
+/*   Created: 2022/03/10 13:00:00 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/10 15:18:00 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_pb(t_list **a, t_list **b)
 {
-	t_list		*a;
-	t_list		*b;
+	t_list	*act;
 
-	b = 0;
-	if (argc > 1)
-	{
-		ft_first_step(&a, argv, argc);
-		if (ft_lst_is_ordered(a) == 1)
-			return (0);
-		if (ft_lstsize(a) <= 3)
-			ft_order_stack_3(&a);
-		else if (ft_lstsize(a) <= 5)
-			ft_order_stack_5(&a, &b);
-		ft_lstprint(a);
-		free_variables(&a);
-		free_variables(&b);
-	}
-	else
-		write(2, "Error\n", 6);
-	return (0);
+	act = (*a)->next;
+	ft_lstadd_front(b, ft_lstnew((*a)->num));
+	ft_putstr("pb\n");
+	free((*a));
+	(*a) = act;
+}
+
+void	ft_pa(t_list **b, t_list **a)
+{
+	t_list	*act;
+
+	act = (*b)->next;
+	ft_lstadd_front(a, ft_lstnew((*b)->num));
+	ft_putstr("pa\n");
+	free((*b));
+	(*b) = act;
 }

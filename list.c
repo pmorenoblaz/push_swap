@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:53:49 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/02/18 17:53:52 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/10 13:10:19 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_list	*ft_lstlast(t_list *lst)
 	return (sig);
 }
 
-t_list	*ft_lstnew(int cnum, int v)
+t_list	*ft_lstnew(int cnum)
 {
 	t_list	*lista;
 
@@ -45,8 +45,7 @@ t_list	*ft_lstnew(int cnum, int v)
 	if (lista == 0)
 		return (0);
 	lista->num = cnum;
-	lista->list = v;
-	lista->ismaxormin = 0;
+	lista->pos = -1;
 	lista->next = NULL;
 	return (lista);
 }

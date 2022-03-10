@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_order_par.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:29:06 by pmoreno-         ###   ########.fr       */
+/*   Created: 2022/03/10 15:47:05 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/10 15:47:06 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_order_par(t_list **a, t_list **b)
 {
-	t_list		*a;
-	t_list		*b;
-
-	b = 0;
-	if (argc > 1)
-	{
-		ft_first_step(&a, argv, argc);
-		if (ft_lst_is_ordered(a) == 1)
-			return (0);
-		if (ft_lstsize(a) <= 3)
-			ft_order_stack_3(&a);
-		else if (ft_lstsize(a) <= 5)
-			ft_order_stack_5(&a, &b);
-		ft_lstprint(a);
-		free_variables(&a);
-		free_variables(&b);
-	}
+	if ((*a) == ft_get_next_min(*a))
+		ft_pa(a, b);
+	else if ((*a) == ft_get_next_max(*a))
+		ft_ra(a);
+	else if ((*a)->num > ((*a)->next)->num)
+		ft_sa(a);
 	else
-		write(2, "Error\n", 6);
-	return (0);
+		ft_ra(a);
 }
