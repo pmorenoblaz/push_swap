@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:27:29 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/10 17:22:17 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,27 +70,31 @@ void	ft_lstdelone(t_list *lst);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 
-//ft_utils.c
+// ft_utils.c
 int		ft_putchr(char c);
 void	ft_putstr(char *s);
 void	ft_lstprint(t_list *list_a);
 void	ps_print_column(t_list *column_a, t_list *column_b);
 
-//ft_3_elements_stack.c
+// ft_3_elements_stack.c
 void	ft_order_stack_3(t_list **a);
 
-//ft_5_elements_stack.c
+// ft_5_elements_stack.c
 void	ft_order_stack_5(t_list **a, t_list **b);
 int		ft_make_movement(t_list **a, t_list **b);
 
-//ft_errors.c
+// ft_errors.c
 void	ft_print_error(void);
 
-//ft_getmax.c
-t_list	*ft_get_next_max(t_list *a);
+// ft_getmax.c
+t_list	*ft_get_next_max(t_list *list);
 
 // ft_getmin.c
-t_list	*ft_get_next_min(t_list *a);
+t_list	*ft_get_next_min(t_list *list);
+
+void	ft_setposition(t_list **a);
+
+
 
 void	ft_algorithm(t_list **a, t_list **b);
 t_list	*ft_less_movements(t_list *a);

@@ -1,31 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getmax.c                                        :+:      :+:    :+:   */
+/*   ft_position.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 15:53:34 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 17:21:07 by pmoreno-         ###   ########.fr       */
+/*   Created: 2022/03/10 17:19:41 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/10 17:27:42 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*ft_get_next_max(t_list *list)
+void	ft_next_min(t_list **list, int pos)
 {
-	t_list	*nextmax;
 	t_list	*sig;
+	t_list	*min;
 
-	sig = list;
 	if (!list)
-		return (0);
-	nextmax = sig;
-	while (sig)
+		return ;
+	sig = *list;
+	min = sig;
+    while (sig)
 	{
-		if (sig->num > nextmax->num)
-			nextmax = sig;
+		if (sig->pos == -1)
+        {
+            min = sig;
+            break ;
+        }	
 		sig = sig->next;
 	}
-	return (nextmax);
+	while (sig)
+	{
+		if (sig->pos == -1 && sig->num < min->num)
+			min = sig;
+		sig = sig->next;
+	}
+	min->pos = pos;
+}
+
+void	ft_setposition(t_list **list)
+{
+	int	i;
+	int	l;
+
+	i = 0;
+	l = ft_lstsize(*list);
+	if (!list)
+		return ;
+	while (i < l)
+	{
+		ft_next_min(list, i);
+		i++;
+	}
 }
