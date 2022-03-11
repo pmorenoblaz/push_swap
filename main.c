@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 19:17:53 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:38:58 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,19 @@ int	main(int argc, char **argv)
 	{
 		ft_first_step(&a, argv, argc);
 		ft_setposition(&a);
-		ft_lstprint(a);
+		// system("leaks push_swap");
 		if (ft_lst_is_ordered(a) == 1)
 			return (0);
+		// system("leaks push_swap");
 		if (ft_lstsize(a) <= 3)
 			ft_order_stack_3(&a);
 		else if (ft_lstsize(a) <= 5)
 			ft_order_stack_5(&a, &b);
 		else
 			ft_radix_sort(&a, &b);
-		ft_lstprint(a);
 		free_variables(&a);
 		free_variables(&b);
+		system("leaks push_swap");
 	}
 	else
 		write(2, "Error\n", 6);

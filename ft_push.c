@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:00:00 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 19:24:33 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 16:33:14 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_pa(t_list **b, t_list **a)
 	t_list	*act;
 
 	act = (*b)->next;
-	ft_lstadd_front(a, ft_lstnew_aux((*b)->num, (*a)->pos));
+	ft_lstadd_front(a, ft_lstnew_aux((*b)->num, (*b)->pos));
 	ft_putstr("pa\n");
 	free((*b));
 	(*b) = act;

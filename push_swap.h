@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 19:24:50 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 08:52:05 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ t_list	*ft_get_next_min(t_list *list);
 void	ft_setposition(t_list **a);
 
 
-
+int		ft_continue(void);
 void	ft_algorithm(t_list **a, t_list **b);
 t_list	*ft_less_movements(t_list *a);
 int		ft_cal_position(t_list *a, int len);

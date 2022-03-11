@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:32:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:14:05 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 08:53:54 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_rra_aux(t_list **a)
 		ant = act;
 		act = act->next;
 	}
-    ft_lstadd_front(a, ft_lstnew(act->num));
+    ft_lstadd_front(a, ft_lstnew_aux(act->num, act->pos));
 	ant->next = 0;
 	ft_lstdelone(act);
     return (1);
@@ -52,7 +52,7 @@ int	ft_rrb_aux(t_list **b)
 		ant = act;
 		act = act->next;
 	}
-    ft_lstadd_front(b, ft_lstnew(act->num));
+    ft_lstadd_front(b, ft_lstnew_aux(act->num, act->pos));
 	ant->next = 0;
 	ft_lstdelone(act);
     return (1);

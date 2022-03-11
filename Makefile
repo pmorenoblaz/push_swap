@@ -2,7 +2,7 @@ SRCS	= main.c list.c ft_split.c ft_strchr.c ft_atoi.c ft_lstsize_bonus.c \
 		ft_strlcpy.c ft_strlen.c ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_3_elements_stack.c  \
 		ft_5_elements_stack.c ft_errors.c ft_getmax.c ft_getmin.c ft_push.c ft_swap.c \
 		ft_rotate.c ft_rev_rotate.c ft_chars.c ft_add_to_list.c ft_free_vars.c ft_position.c \
-		ft_wololo.c
+		ft_algorithm.c ft_list2.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -16,11 +16,11 @@ RM	= rm -f
 
 all:		$(NAME)
 
-.c.o:
+%.o:%.c
 	$(GCC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
-	$(CC) -o $(NAME) $?
+	$(GCC) -o $(NAME) $?
 
 clean:		
 	$(RM) $(OBJS)
