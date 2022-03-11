@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:25:00 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/11 16:43:00 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:09:47 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_ra(t_list **a)
 	(*a) = (*a)->next;
     ft_lstadd_back(a, ft_lstnew_aux(act->num, act->pos));
 	free(act);
-	ft_putstr("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	ft_rb(t_list **b)
@@ -35,7 +35,7 @@ void	ft_rb(t_list **b)
 	(*b) = (*b)->next;
     ft_lstadd_back(b, ft_lstnew_aux(act->num, act->pos));
 	free(act);
-	ft_putstr("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	ft_rr(t_list **a, t_list **b)
@@ -52,5 +52,5 @@ void	ft_rr(t_list **a, t_list **b)
 	(*b) = (*b)->next;
     ft_lstadd_back(b, ft_lstnew_aux(act->num, act->pos));
 	free(act);
-	ft_putstr("rr\n");
+	write(1, "rr\n", 3);
 }

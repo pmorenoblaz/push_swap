@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:32:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/11 08:53:54 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:06:28 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_rra(t_list **a)
     if (!a)
 		return ;
     if(ft_rra_aux(a))
-        ft_putstr("rra\n");
+        write(1, "rra\n", 4);
 }
 
 int	ft_rrb_aux(t_list **b)
@@ -63,7 +63,7 @@ void	ft_rrb(t_list **b)
     if (!b)
 		return ;
     if(ft_rrb_aux(b))
-        ft_putstr("rrb\n");
+        write(1, "rrb\n", 4);
 }
 
 void	ft_rrr(t_list **a, t_list **b)
@@ -72,5 +72,5 @@ void	ft_rrr(t_list **a, t_list **b)
 		return ;
     ft_rra_aux(a);
     ft_rrb_aux(b);
-	ft_putstr("rrr\n");
+	write(1, "rrr\n", 4);
 }

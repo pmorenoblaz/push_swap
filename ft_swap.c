@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:23:10 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 15:23:01 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/11 17:06:52 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_sa(t_list **list)
 		(*list)->next = act->next;
 		ft_lstadd_front(list, act);
 	}
-	ft_putstr("sa\n");
+	write(1, "sa\n", 3);
 }
 
 void	ft_sb(t_list **list)
@@ -41,7 +41,7 @@ void	ft_sb(t_list **list)
 		(*list)->next = act->next;
 		ft_lstadd_front(list, act);
 	}
-	ft_putstr("sb\n");
+	write(1, "sb\n", 3);
 }
 
 void	ft_ss(t_list **a, t_list **b)
@@ -64,5 +64,5 @@ void	ft_ss(t_list **a, t_list **b)
 		(*b)->next = act->next;
 		ft_lstadd_front(b, act);
 	}
-	ft_putstr("ss\n");
+	write(1, "ss\n", 3);
 }
