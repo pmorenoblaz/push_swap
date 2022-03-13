@@ -1,46 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_algorithm.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/13 10:28:20 by pmoreno-          #+#    #+#             */
+/*   Updated: 2022/03/13 10:29:35 by pmoreno-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int	ft_bit_big(int lstlen);
-
-void	ft_radix_sort(t_list **lst_a, t_list **lst_b)
+int	ft_pow(int num)
 {
-	int		i;
-	int		bit;
-	int		len_a;
-	int		bit_max;
+	int	i;
 
-	bit = -1;
-	len_a = ft_lstsize(*lst_a);
-	bit_max = ft_bit_big(len_a);
-	while (++bit < bit_max)
+	i = 0;
+	while (num > 0)
 	{
-		i = 1;
-		while (i <= len_a)
-		{
-			if ((((*lst_a)->pos) >> bit) % 2 == 0)
-				ft_pb(lst_a, lst_b);
-			else
-				ft_ra(lst_a);
-			i++;
-		}
-		while (*lst_b)
-			ft_pa(lst_b, lst_a);
+		num = num / 2;
+		i++;
 	}
+	return (i);
 }
 
-static int	ft_bit_big(int lstlen)
+void	ft_algorithm(t_list **a, t_list **b)
 {
-	if (lstlen <= 63)
-		return (6);
-	if (lstlen <= 127)
-		return (7);
-	if (lstlen <= 255)
-		return (8);
-	if (lstlen <= 511)
-		return (9);
-	if (lstlen <= 1023)
-		return (10);
-	if (lstlen <= 2047)
-		return (11);
-	return (32);
+	int		i;
+	int		bpos;
+	int		l;
+
+	bpos = 0;
+	l = ft_lstsize(*a);
+	while (bpos < ft_pow(l))
+	{
+		i = 0;
+		while (i < l)
+		{
+			if ((((*a)->pos) >> bpos) % 2 == 0)
+				ft_pb(a, b);
+			else
+				ft_ra(a);
+			i++;
+		}
+		while (*b)
+			ft_pa(b, a);
+		bpos++;
+	}
 }

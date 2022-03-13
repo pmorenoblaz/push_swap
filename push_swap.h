@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/11 08:52:05 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 10:41:22 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,21 +92,16 @@ t_list	*ft_get_next_max(t_list *list);
 
 // ft_getmin.c
 t_list	*ft_get_next_min(t_list *list);
-
 void	ft_setposition(t_list **a);
 
-
-int		ft_continue(void);
+// ft_algorithm.c
 void	ft_algorithm(t_list **a, t_list **b);
-t_list	*ft_less_movements(t_list *a);
-int		ft_cal_position(t_list *a, int len);
 
+// ft_free_vars.c
 void	free_variables(t_list **list);
 void	free_variables2(char **list, int argc);
-void	ft_order_par(t_list **list_a, t_list **list_b);
-void	ft_move_element_b(t_list **a, t_list **b, int n, int dir);
-void	ft_order_final_stack(t_list **a, t_list **b);
+
+// ft_chars.c
 void	ft_first_step(t_list **a, char **argv, int argc);
-void	ft_radix_sort(t_list **lst_a, t_list **lst_b);
 
 #endif
