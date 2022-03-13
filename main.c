@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 11:12:11 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:38:51 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	t_list		*a;
 	t_list		*b;
 
+	a = 0;
 	b = 0;
 	if (argc > 1)
 	{

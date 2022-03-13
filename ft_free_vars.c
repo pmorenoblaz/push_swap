@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_vars.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmoreno- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 17:21:50 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/01 17:21:53 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:35:44 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_variables2(char **list, int argc)
+void	free_variables_list(char **list)
 {
 	int		i;
 
 	i = 0;
-	while (i < argc)
+	while (list[i])
 	{
 		free(list[i]);
 		i++;

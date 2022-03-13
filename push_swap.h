@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 10:52:00 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:36:02 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_algorithm(t_list **a, t_list **b);
 
 // ft_free_vars.c
 void	free_variables(t_list **list);
-void	free_variables2(char **list, int argc);
+void	free_variables_list(char **list);
 
 // ft_chars.c
 void	ft_first_step(t_list **a, char **argv, int argc);

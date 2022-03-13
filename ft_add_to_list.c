@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 12:58:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 16:27:14 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:37:13 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	ft_valid_args(char	*arg, t_list **a)
 		{
 			if (list[i][j] < '0' || list[i][j] > '9')
 			{
-				free_variables2(list, i);
+				free_variables_list(list);
 				return (0);
 			}
 			j++;
 		}
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(list[i])));
 	}
-	free_variables2(list, i);
+	free_variables_list(list);
 	return (1);
 }
 
