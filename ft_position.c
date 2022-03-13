@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 17:19:41 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/10 19:10:21 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 10:56:43 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	ft_next_min(t_list **list, int pos)
 		return ;
 	sig = *list;
 	min = sig;
-    while (sig)
+	while (sig)
 	{
 		if (sig->pos == -1)
-        {
-            min = sig;
-            break ;
-        }	
+		{
+			min = sig;
+			break ;
+		}	
 		sig = sig->next;
 	}
 	while (sig)

@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:16:33 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/11 08:51:52 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 11:02:18 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,18 +48,6 @@ void	ft_lstprint(t_list *list_a)
 		}
 	}
 	printf("----------- -----------\na           b\n");
-}
-
-int	ft_continue(void)
-{
-	int		op;
-
-	op = -1;
-	printf("¿Seguimos?: \n");
-	scanf("%d", &op);
-	if (op == 0)
-		return (0);
-	return (1);
 }
 
 void	ps_print_column(t_list *column_a, t_list *column_b)

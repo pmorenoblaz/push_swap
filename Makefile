@@ -2,7 +2,7 @@ SRCS = ft_5_elements_stack.c ft_add_to_list.c ft_algorithm.c \
 	   ft_atoi.c ft_chars.c ft_errors.c ft_free_vars.c ft_getmax.c ft_getmin.c \
 	   ft_list2.c ft_lstadd_front.c ft_lstdelone.c ft_lstsize.c \
 	   ft_position.c ft_push.c ft_rev_rotate.c ft_rotate.c ft_split.c ft_strchr.c \
-	   ft_strlcpy.c ft_strlen.c ft_swap.c list.c main.c ft_3_elements_stack.c
+	   ft_strlcpy.c ft_strlen.c ft_swap.c ft_list.c main.c ft_3_elements_stack.c
 		
 
 OBJS = $(SRCS:.c=.o)
@@ -18,7 +18,7 @@ RM = rm -f
 all: $(NAME)
 
 %.o:%.c
-	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(CC) -o $(NAME) $(OBJS)

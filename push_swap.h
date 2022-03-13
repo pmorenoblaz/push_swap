@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 10:41:22 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 10:52:00 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-//list.c
+// ft_list.c
 int		ft_repeated_nbr(t_list *lst);
 int		ft_lst_is_ordered(t_list *lst);
+
+// ft_list2.c
+t_list	*ft_lstnew_aux(int cnum, int pos);
 
 // ft_add_to_list.c
 int		ft_add_to_stack(char **argv, int argc, t_list **a);
