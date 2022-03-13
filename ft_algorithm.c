@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:28:20 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 10:29:35 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 14:00:36 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ void	ft_algorithm(t_list **a, t_list **b)
 		i = 0;
 		while (i < l)
 		{
-			if ((((*a)->pos) >> bpos) % 2 == 0)
-				ft_pb(a, b);
-			else
+			if ((((*a)->pos) >> bpos) % 2 != 0)
 				ft_ra(a);
+			else
+				ft_pb(a, b);
 			i++;
 		}
 		while (*b)

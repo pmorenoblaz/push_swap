@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:28 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 13:36:02 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 14:20:48 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,20 +60,6 @@ int		ft_rrb_aux(t_list **b);
 void	ft_rrb(t_list **b);
 void	ft_rrr(t_list **a, t_list **b);
 
-// Libft
-t_list	*ft_lstnew_aux(int cnum, int pos);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(const char *s);
-int		ft_atoi(const char *str);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstlast(t_list *lst);
-int		ft_lstsize(t_list *lst);
-t_list	*ft_lstnew(int cnum);
-void	ft_lstdelone(t_list *lst);
-char	**ft_split(char const *s, char c);
-char	*ft_strchr(const char *s, int c);
-
 // ft_utils.c
 int		ft_putchr(char c);
 void	ft_putstr(char *s);
@@ -98,6 +84,7 @@ t_list	*ft_get_next_min(t_list *list);
 void	ft_setposition(t_list **a);
 
 // ft_algorithm.c
+int		ft_pow(int num);
 void	ft_algorithm(t_list **a, t_list **b);
 
 // ft_free_vars.c
@@ -106,5 +93,19 @@ void	free_variables_list(char **list);
 
 // ft_chars.c
 void	ft_first_step(t_list **a, char **argv, int argc);
+
+// Libft
+t_list	*ft_lstnew_aux(int cnum, int pos);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlen(const char *s);
+int		ft_atoi(const char *str);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstlast(t_list *lst);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstnew(int cnum);
+void	ft_lstdelone(t_list *lst);
+char	**ft_split(char const *s, char c);
+char	*ft_strchr(const char *s, int c);
 
 #endif
