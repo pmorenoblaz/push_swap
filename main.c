@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 10:52:15 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/13 11:12:11 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,5 @@ int	main(int argc, char **argv)
 		free_variables(&a);
 		free_variables(&b);
 	}
-	else
-		write(2, "Error\n", 6);
 	return (0);
 }
