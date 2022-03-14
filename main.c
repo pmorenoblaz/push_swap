@@ -6,7 +6,7 @@
 /*   By: pmoreno- <pmoreno-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:54:02 by pmoreno-          #+#    #+#             */
-/*   Updated: 2022/03/13 14:11:38 by pmoreno-         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:02:45 by pmoreno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	main(int argc, char **argv)
 		ft_first_step(&a, argv, argc);
 		ft_setposition(&a);
 		if (ft_lst_is_ordered(a) == 1)
+		{
+			free_variables(&a);
 			return (0);
+		}
 		if (ft_lstsize(a) <= 3)
 			ft_order_stack_3(&a);
 		else if (ft_lstsize(a) <= 5)

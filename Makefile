@@ -21,7 +21,7 @@ all: $(NAME)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@$(CC) -o $(NAME) $(OBJS)
+	@$(CC) -o $(NAME) $(OBJS) 
 	@echo $(NAME)": ready to be executed"
 
 clean:
